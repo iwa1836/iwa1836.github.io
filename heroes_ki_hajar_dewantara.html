@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="https://r.mobirisesite.com/905761/assets/images/photo-1497942304796-b8bc2cc898f3.jpeg" type="image/x-icon" />
     <meta name="description" content="Explore the fascinating history of heroes, their legendary tales, and the impact they have had on society throughout the ages." />
 
-    <title>Ki Hajar Dewantara</title>
+    <title>Dewi Sartika</title>
 
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1731811735194" />
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/bootstrap/css/bootstrap.min.css?rnd=1731811735194" />
@@ -267,99 +267,180 @@
     </section>
 
     <!-- Get Inspired by The Hero -->
-    <!-- Interactive Timeline -->
-    // coba coba
-    <section data-bs-version="5.1" class="timeline cid-uuiqO8TL78" id="interactive-timeline">
+    <!-- Interactive Quiz Section -->
+    <section data-bs-version="5.1" class="quiz-section cid-uuiqO8Quiz" id="interactive-quiz">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 mb-4 content-head text-center">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>Milestones of Ki Hajar Dewantara</strong>
+              <strong>How Much Do You Know About Ki Hajar Dewantara?</strong>
             </h3>
-            <p class="mbr-fonts-style display-7 mt-3">Explore the key events that shaped his legacy.</p>
+            <p class="mbr-fonts-style display-7 mt-3">Take this quiz and discover fun facts about his life and achievements!</p>
           </div>
         </div>
-        <div class="timeline-content">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-info">
-              <h4 class="mbr-section-title mbr-fonts-style mb-2 display-5">
-                <strong>1889: Born as Raden Mas Soewardi Soerjaningrat</strong>
-              </h4>
-              <p class="mbr-fonts-style display-7">Born into a Javanese noble family in Yogyakarta, marking the beginning of an extraordinary journey.</p>
-            </div>
+        <div class="quiz-container">
+          <!-- Question 1 -->
+          <div class="quiz-item">
+            <h4 class="quiz-question mbr-fonts-style display-5">
+              <strong>1. What was Ki Hajar Dewantara’s original name?</strong>
+            </h4>
+            <ul class="quiz-options">
+              <li><input type="radio" name="q1" id="q1a" value="A" /> <label for="q1a">Raden Mas Soewardi Soerjaningrat</label></li>
+              <li><input type="radio" name="q1" id="q1b" value="B" /> <label for="q1b">Ki Ageng Suryomentaram</label></li>
+              <li><input type="radio" name="q1" id="q1c" value="C" /> <label for="q1c">Raden Saleh</label></li>
+            </ul>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-info">
-              <h4 class="mbr-section-title mbr-fonts-style mb-2 display-5">
-                <strong>1913: Established Nationalist Writings</strong>
-              </h4>
-              <p class="mbr-fonts-style display-7">Published influential writings advocating for Indonesian independence and education.</p>
-            </div>
+          <!-- Question 2 -->
+          <div class="quiz-item">
+            <h4 class="quiz-question mbr-fonts-style display-5">
+              <strong>2. What is the motto he is famous for?</strong>
+            </h4>
+            <ul class="quiz-options">
+              <li><input type="radio" name="q2" id="q2a" value="A" /> <label for="q2a">Unity in Diversity</label></li>
+              <li><input type="radio" name="q2" id="q2b" value="B" /> <label for="q2b">Tut Wuri Handayani</label></li>
+              <li><input type="radio" name="q2" id="q2c" value="C" /> <label for="q2c">From Darkness to Light</label></li>
+            </ul>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-info">
-              <h4 class="mbr-section-title mbr-fonts-style mb-2 display-5">
-                <strong>1922: Founded Taman Siswa</strong>
-              </h4>
-              <p class="mbr-fonts-style display-7">Started the Taman Siswa educational movement to promote education for all Indonesians.</p>
-            </div>
+          <!-- Question 3 -->
+          <div class="quiz-item">
+            <h4 class="quiz-question mbr-fonts-style display-5">
+              <strong>3. What educational movement did he establish?</strong>
+            </h4>
+            <ul class="quiz-options">
+              <li><input type="radio" name="q3" id="q3a" value="A" /> <label for="q3a">Taman Siswa</label></li>
+              <li><input type="radio" name="q3" id="q3b" value="B" /> <label for="q3b">Boedi Oetomo</label></li>
+              <li><input type="radio" name="q3" id="q3c" value="C" /> <label for="q3c">Indische Partij</label></li>
+            </ul>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-info">
-              <h4 class="mbr-section-title mbr-fonts-style mb-2 display-5">
-                <strong>1959: Declared National Hero</strong>
-              </h4>
-              <p class="mbr-fonts-style display-7">Recognized as a National Hero of Indonesia for his dedication to education and independence.</p>
-            </div>
-          </div>
+          <button class="btn btn-primary mt-4" onclick="checkAnswers()">Submit Answers</button>
         </div>
       </div>
     </section>
 
-    <!-- CSS for Timeline -->
+    <!-- Pop-Up Modal -->
+    <div id="quizModal" class="quiz-modal">
+      <div class="quiz-modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title">Your Quiz Score!</h2>
+        <p class="modal-score" id="modal-score"></p>
+        <div class="confetti"></div>
+      </div>
+    </div>
+
+    <!-- CSS for Quiz and Modal -->
     <style>
-      .timeline {
-        background-color: #f9f9f9;
+      .quiz-section {
+        background-color: #f4f4f9;
         padding: 50px 20px;
+        border-radius: 10px;
       }
-      .timeline-content {
-        position: relative;
+      .quiz-container {
         max-width: 800px;
         margin: 0 auto;
       }
-      .timeline-item {
+      .quiz-item {
         margin-bottom: 30px;
-        position: relative;
-        padding-left: 30px;
       }
-      .timeline-item:last-child {
-        margin-bottom: 0;
-      }
-      .timeline-dot {
-        position: absolute;
-        left: 0;
-        top: 10px;
-        width: 20px;
-        height: 20px;
-        background-color: #563d82;
-        border-radius: 50%;
-      }
-      .timeline-info {
-        background: white;
-        border: 1px solid #ddd;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-      }
-      .timeline-info h4 {
-        margin-top: 0;
+      .quiz-question {
+        margin-bottom: 15px;
         color: #563d82;
       }
+      .quiz-options li {
+        list-style: none;
+        margin: 5px 0;
+      }
+
+      /* Modal Styling */
+      .quiz-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        animation: fadeIn 0.5s;
+      }
+      .quiz-modal-content {
+        position: relative;
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+        animation: popIn 0.5s;
+      }
+      .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+      }
+      .modal-title {
+        font-size: 28px;
+        color: #563d82;
+      }
+      .modal-score {
+        font-size: 22px;
+        margin-top: 20px;
+        color: #333;
+      }
+
+      /* Animation */
+      @keyframes popIn {
+        from {
+          transform: scale(0.8);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
     </style>
+
+    <!-- JavaScript for Quiz Logic and Modal -->
+    <script>
+      function checkAnswers() {
+        const correctAnswers = {
+          q1: 'A',
+          q2: 'B',
+          q3: 'A',
+        };
+        let score = 0;
+        for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+          const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+          if (userAnswer && userAnswer.value === correctAnswer) {
+            score++;
+          }
+        }
+        displayModal(score, Object.keys(correctAnswers).length);
+      }
+
+      function displayModal(score, total) {
+        const modal = document.getElementById('quizModal');
+        const scoreText = document.getElementById('modal-score');
+        scoreText.innerHTML = `You scored <strong>${score} out of ${total}</strong>!<br>${score === total ? "🎉 Incredible! You're a genius! 🎉" : 'Keep learning to achieve perfection!'}`;
+        modal.style.display = 'block';
+      }
+
+      function closeModal() {
+        const modal = document.getElementById('quizModal');
+        modal.style.display = 'none';
+      }
+    </script>
 
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
