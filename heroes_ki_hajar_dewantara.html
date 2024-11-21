@@ -8,6 +8,14 @@
     <link rel="shortcut icon" href="https://r.mobirisesite.com/905761/assets/images/photo-1497942304796-b8bc2cc898f3.jpeg" type="image/x-icon" />
     <meta name="description" content="Explore the fascinating history of heroes, their legendary tales, and the impact they have had on society throughout the ages." />
 
+    <style>
+      #google_translate_element {
+        margin-top: 10px;
+        text-align: center;
+        display: none; /* Initially hidden */
+      }
+    </style>
+
     <title>Ki Hajar Dewantara</title>
 
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1731811735194" />
@@ -23,8 +31,57 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <script>
+      function translatePage() {
+        const lang = document.getElementById('language-select').value;
+
+        // Check if the selected language is English
+        if (lang === 'en') {
+          location.reload(); // Reload the page to revert to the original language
+          return;
+        }
+
+        // Dynamically load the Google Translate script
+        if (!document.querySelector('#google-translate-script')) {
+          const script = document.createElement('script');
+          script.id = 'google-translate-script';
+          script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+          document.body.appendChild(script);
+        } else {
+          initializeGoogleTranslate(lang);
+        }
+      }
+
+      // Google Translate initialization
+      function googleTranslateElementInit() {
+        const lang = document.getElementById('language-select').value;
+        initializeGoogleTranslate(lang);
+      }
+
+      function initializeGoogleTranslate(lang) {
+        const translateElement = new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: `${lang},en`, // Include the selected language and English
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          'google_translate_element'
+        );
+        document.getElementById('google_translate_element').style.display = 'block'; // Show translate element
+      }
+    </script>
+
     <!-- Header Menu -->
     <iframe src="header_heroes_page.html"></iframe>
+    <div class="language-switcher" style="text-align: right; margin: 10px; padding: 10px">
+      <label for="language-select" style="margin-right: 10px">Select Language:</label>
+      <select id="language-select" onchange="translatePage()" style="padding: 5px; border-radius: 5px">
+        <option value="en">English</option>
+        <option value="zh-TW">Chinese (Traditional)</option>
+      </select>
+    </div>
+
+    <div id="google_translate_element" style="display: none"></div>
 
     <!-- Video and Hero's Name -->
     <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=fj-BcPK90f0" id="video-and-name">
