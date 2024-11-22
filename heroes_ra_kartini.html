@@ -113,47 +113,47 @@
    <!-- Opening Image -->
 
 <!-- Opening Image with Local Background -->
-<section 
-  data-bs-version="5.1" 
-  class="header18 cid-uuiqO6OSxL mbr-fullscreen" 
-  id="opening-image">
+<section id="opening-image" class="header18 cid-uuiqO6OSxL mbr-fullscreen">
+  <img 
+    src="images/Krem ilustrasi Ucapan Hari Kartini Banner.png" 
+    alt="Hari Kartini Banner" 
+    class="responsive-image" 
+  />
 </section>
+
+
 
 <style>
   /* Responsiveness for the opening image section */
-  #opening-image {
-    background-image: url('images/Krem ilustrasi Ucapan Hari Kartini Banner.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh; /* Fill the viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+ /* Section container */
+#opening-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent content overflow */
+  margin: 0;
+  padding: 0;
+}
 
-  /* Ensure full responsiveness for smaller devices */
-  @media (max-width: 768px) {
-    #opening-image {
-      background-size: contain; /* Keep the whole image visible */
-      height: 100%; /* Allow content height to adapt */
-    }
-  }
+/* Responsive image */
+.responsive-image {
+  width: 100%; /* Make the image take the full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100vh; /* Ensure it doesn’t exceed the viewport height */
+  object-fit: cover; /* Ensure it scales properly without distortion */
+  object-position: center; /* Center the focus of the image */
+}
 
-  @media (max-width: 480px) {
-    #opening-image {
-      background-size: contain;
-      background-position: top center; /* Focus on the center-top of the image */
-      height: auto; /* Adjust height for scrolling */
-    }
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .responsive-image {
+    object-fit: contain; /* Ensure the entire image is visible */
+    max-height: none; /* Allow the image to expand vertically if necessary */
   }
+}
 
-  /* Additional safeguard for better adaptability */
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
 </style>
 
 
