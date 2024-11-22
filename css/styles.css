@@ -90,6 +90,13 @@
     @keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
 }
 
+.header-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 50%;
+}
+
 .footer-container {
     position: relative;
     width: 100%;
