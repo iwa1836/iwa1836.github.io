@@ -168,65 +168,36 @@
    <!-- Opening Image -->
 
 <!-- Opening Image with Local Background -->
-<section id="opening-image" class="header18 cid-uuiqO6OSxL mbr-fullscreen">
-  <img 
-    src="images/Krem ilustrasi MARTHACBanner.png" 
-    alt="Hari Kartini Banner" 
-    class="responsive-image" 
-  />
-</section>
-
-
-
-<style>
-  /* Responsiveness for the opening image section */
- /* Section container */
-#opening-image {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Prevent content overflow */
-  margin: 0;
-  padding: 0;
-}
-
-/* Responsive image */
-.responsive-image {
-  width: 100%; /* Make the image take the full width */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 100vh; /* Ensure it doesn’t exceed the viewport height */
-  object-fit: cover; /* Ensure it scales properly without distortion */
-  object-position: center; /* Center the focus of the image */
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  .responsive-image {
-    object-fit: contain; /* Ensure the entire image is visible */
-    max-height: none; /* Allow the image to expand vertically if necessary */
-  }
-}
-
-</style>
-
-    <!-- Hero's Image and Basic Profile -->
-    <section data-bs-version="5.1" class="header12 cid-uuiqO76SyA" id="basic-profile">
-      <div class="text-center container">
-
-        <div class="row mb-4 justify-content-center">
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-12 content-head">
-            <p class="mbr-text mbr-fonts-style mb-4 display-7">"Be a warrior with empathy; every act of helping others is a form of struggle."</p>
-            <div class="mbr-section-btn mt-4">
-              <a class="btn btn-primary display-7" href="#about-the-hero">Get Started</a>
-            </div>
-          </div>
+<section id="opening-image">
+  <div class="mbr-overlay" style="opacity: 0.75; background-color: rgb(255, 255, 255);"></div>
+  <div class="text-center container" style="display: flex; flex-direction: column; justify-content: flex-end; width: 100vw; aspect-ratio: 2 / 1;">
+    <div class="row justify-content-center">
+      <div class="col-md-12 content-head">
+        <p class="mbr-text mbr-fonts-style mb-4 display-7">"Be a warrior with empathy; every act of helping others is a form of struggle."</p>
+        <div class="mbr-section-btn mt-4">
+          <a class="btn btn-primary display-7" href="#about-the-hero">Get Started</a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<style>
+  #opening-image {
+    background-image: url('images/Krem\ ilustrasi\ MARTHACBanner.png'); /* Fixed the URL escape sequences */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 100vw; /* Ensures the container takes the full width of the viewport */
+    aspect-ratio: 2 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents content overflow */
+  }
+  </style>
 
     <!-- About The Hero -->
     <section data-bs-version="5.1" class="list1 cid-uuiqO7eKKM" id="about-the-hero">
