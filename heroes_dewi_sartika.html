@@ -21,55 +21,118 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" /></noscript>
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/css/mbr-additional.css?rnd=1731811735194" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .goog-logo-link {
+        display: none !important;
+      }
+      .goog-te-gadget {
+        font-size: 0 !important;
+      }
+      .goog-te-gadget span {
+        display: none !important;
+      }
+    </style>
+
+    <style>
+      .grid-item img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+      }
+    </style>
+
+    <style>
+      .language-switcher {
+        text-align: right;
+        margin: 10px;
+        padding: 10px;
+      }
+      .goog-te-banner-frame {
+        display: block !important;
+        position: fixed !important;
+        top: 0;
+        z-index: 9999;
+      }
+    </style>
   </head>
   <body>
     <!-- Header Menu -->
     <iframe src="header_heroes_page.html"></iframe>
 
-    <!-- Video and Hero's Name -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=fj-BcPK90f0" id="video-and-name">
-      <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0)"></div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="content-wrap col-12 col-md-12">
-            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-              <strong>Ki Hajar Dewantara</strong>
-            </h1>
-            <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">The Indonesian Hero of Education</p>
-            <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#running-text">Explore Now</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
 
-    <!-- Running Text -->
-    <section data-bs-version="5.1" class="gallery10 cid-uuiqO6YB8v" id="running-text">
-      <div class="container-fluid">
-        <div class="loop-container">
-          <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">
-            ☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes
-          </div>
-          <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">
-            ☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Google Translate Script -->
+    <script>
+      // Inisialisasi Google Translate
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,id,zh-TW', autoDisplay: false }, 'google_translate_element');
+      }
+
+      // Memuat script Google Translate secara dinamis
+      function loadGoogleTranslateScript() {
+        const script = document.createElement('script');
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(script);
+      }
+
+      // Mengubah Bahasa
+      function translatePage() {
+        const lang = document.getElementById('language-select').value;
+        if (lang === 'en') {
+          // Reload halaman untuk mengatur ulang Google Translate
+          location.reload();
+        } else {
+          if (!window.google || !window.google.translate) {
+            loadGoogleTranslateScript();
+          } else {
+            triggerLanguageChange(lang);
+          }
+        }
+      }
+
+      // Memicu perubahan bahasa melalui Google Translate
+      function triggerLanguageChange(lang) {
+        const iframe = document.querySelector('.goog-te-banner-frame');
+        if (iframe) {
+          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const selectElement = innerDoc.querySelector('select');
+          if (selectElement) {
+            selectElement.value = lang;
+            selectElement.dispatchEvent(new Event('change'));
+          }
+        } else {
+          setTimeout(() => triggerLanguageChange(lang), 500);
+        }
+      }
+
+      // Muat script Google Translate saat halaman dimuat
+      loadGoogleTranslateScript();
+    </script>
+
+   <!-- Opening Image with Local Background -->
+   <section
+   data-bs-version="5.1"
+   class="header18 cid-uuiqO6OSxL mbr-fullscreen"
+   id="opening-image"
+   style="background-image: url('images/Krem\ ilustrasi\ DSHari\ Kartini\ Banner.png'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 100vh; margin: 0; padding: 0"
+ ></section>
 
     <!-- Hero's Image and Basic Profile -->
     <section data-bs-version="5.1" class="header12 cid-uuiqO76SyA" id="basic-profile">
       <div class="text-center container">
+
         <div class="row mb-4 justify-content-center">
           <div class="col-12 col-md-4">
-            <img src="https://r.mobirisesite.com/905761/assets/images/photo-1469388062863-8702b8cbe-h_m3k66fsh.jpg" alt="" />
+            <img src="https://bincangmuslimah.com/wp-content/uploads/2024/05/Dewi-Sartika-e1714974271741.jpg" alt="" />
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-12 content-head">
             <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
-              <strong>Ki Hajar Dewantara</strong>
+              <strong>Dewi Sartika</strong>
             </h1>
-            <p class="mbr-text mbr-fonts-style mb-4 display-7">Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani</p>
+            <p class="mbr-text mbr-fonts-style mb-4 display-7">There are no limits for women to learn and create.</p>
             <div class="mbr-section-btn mt-4">
               <a class="btn btn-primary display-7" href="#about-the-hero">Get Started</a>
             </div>
@@ -88,7 +151,7 @@
                 <div class="col-12 content-head">
                   <div class="mbr-section-head">
                     <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                      <strong>About Ki Hajar Dewantara</strong>
+                      <strong>About Dewi Sartika</strong>
                     </h4>
                   </div>
                 </div>
@@ -97,65 +160,75 @@
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false" aria-controls="collapse1">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 1?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Childhood and Family Background</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 1.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Dewi Sartika was born on December 4, 1884, in Bandung, West Java, into a Sundanese noble family. Her parents, Raden Rangga Somanagara and Raden Ayu Raja Permas, were advocates of education, which greatly influenced her early life. Despite living under colonial rule, Dewi Sartika displayed an exceptional interest in education from a young age, showing a passion for teaching and learning even within the confines of traditional norms.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 2?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5"> Founding the First Women’s Schooln</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 2.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        In 1904, Dewi Sartika founded the first school for girls in Indonesia, named Sakola Istri (Women’s School), in Bandung. The school was established to provide basic education to women, focusing on reading, writing, sewing, and household skills. This groundbreaking initiative marked the beginning of accessible education for women in Indonesia, inspiring similar movements across the archipelago
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_17" aria-expanded="false" aria-controls="collapse3">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 3?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Vision for Women’s Empowerment</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse3_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 3.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Dewi Sartika envisioned an Indonesia where women could contribute equally to society. She believed that educating women was key to advancing families and communities. Her school’s curriculum not only taught practical skills but also instilled the value of independence and self-reliance, preparing women to face societal challenges.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_17" aria-expanded="false" aria-controls="collapse4">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 4?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Legacy and Recognition</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse4_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 4.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Dewi Sartika’s dedication to women’s education earned her recognition as a national hero in 1966. Her work significantly contributed to the early stages of women’s empowerment in Indonesia. Today, she is celebrated as a pioneer in education who laid the foundation for future generations of women to access knowledge and pursue their potential.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_17" aria-expanded="false" aria-controls="collapse5">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 5?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Dewi Sartika’s Lifelong Dedication to Education</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse5_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 5.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Dewi Sartika dedicated her entire life to ensuring that women, regardless of their background, had access to education. Even amidst resistance and challenges, she continued to advocate for her vision of an educated and empowered society. Her perseverance serves as a reminder of the transformative power of education.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -169,82 +242,94 @@
     <!-- Gallery -->
     <section data-bs-version="5.1" class="gallery4 cid-uuiqO7qVLF" id="gallery">
       <div class="container-fluid gallery-wrapper">
+        <h4 class="gallery-title mbr-fonts-style align-center mb-4 display-2"><strong>Photos of Her</strong></h4>
         <div class="row justify-content-center">
           <div class="col-12 content-head"></div>
         </div>
         <div class="grid-container">
           <div class="grid-container-1" style="transform: translate3d(-200px, 0px, 0px)">
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1463595663992-cb0dc1d64-h_m3k6qx64.jpg" alt="" />
+              <img src="https://koropak.co.id/wp-content/uploads/artikel/raden-dewi-sartika-sosok-pahlawan-pendidikan-dan-emansipasi-wanita-indonesia_1692943220.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1574687357639-60df588aa-h_m3k6m9ux.jpg" alt="" />
+              <img src="https://asset-a.grid.id/crop/0x0:0x0/700x0/photo/2021/11/25/dewi-sartikajpg-20211125012427.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1479888230021-c24f136d8-h_m3k6n0c9.jpg" alt="" />
+              <img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2021/12/21/1944809963.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1530819568329-97653eafb-h_m3k6pppz.jpg" alt="" />
+              <img src="https://i.ytimg.com/vi/LxhGmhVPVgk/maxresdefault.jpg" alt="" />
             </div>
           </div>
           <div class="grid-container-2" style="transform: translate3d(-70px, 0px, 0px)">
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1484887603430-371459454eed.jpeg" alt="" />
+              <img
+                src="https://cdn1-production-images-kly.akamaized.net/T4BXxDmbYiTKou2rk_b3b6bolw0=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/1572597/original/092418800_1492681935-Raden_Dewi_Sartika_dan_Raden_Kanduruann_Agah_Suriawinata_Biografi_Dewi_Sartika_Yan_Daryono_Huyogo_Simbolon.jpg"
+                alt=""
+              />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488693161025-5f967b74de89.jpeg" alt="" />
+              <img src="https://akcdn.detik.net.id/community/media/visual/2022/09/24/para-siswi-sakola-istri-yang-didirikan-dewi-sartikafotopinterestcomoud-indie-new.jpeg?w=620&q=90" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1496293455970-f8581aae0e3b.jpeg" alt="" />
+              <img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2021/12/23/3603103402.jpeg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1532387482281-c56ef57652ec.jpeg" alt="" />
+              <img src="https://indonesia.go.id/assets/upload/headline//1556703283_sekolah_Kartini_696x444.png" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Hero's Story -->
-    <section data-bs-version="5.1" class="article9 cid-uuiqO7HdB8" id="story">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="card col-md-12 col-lg-10">
-            <div class="card-wrapper">
-              <div class="card-content-text">
-                <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
-                  <strong>Unveiling Heroic Legends</strong>
-                </h3>
-                <div class="row card-box align-left">
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="image-wrapper d-flex justify-content-center mt-3">
-                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488841714725-bb4c32d1a-h_m3k6rpu2.jpg" alt="" />
-              </div>
+    <!-- Value of His Life Section -->
+    <section class="heroic-cards" style="background-color: #f8f9fa; padding: 50px 0">
+      <div class="container" style="max-width: 1200px; margin: auto">
+        <!-- Section Title -->
+        <h2 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: #333; margin-bottom: 30px">Value of Her Life</h2>
+
+        <div class="row card-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+          <!-- Card 1 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://thumbs.dreamstime.com/z/three-young-girls-reading-book-home-10970884.jpg" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">Education as a Tool for Empowerment
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Dewi Sartika firmly believed in education as the foundation of empowerment, particularly for women. She dedicated her life to ensuring that women could gain the skills and knowledge needed to improve their lives and society.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://img.freepik.com/premium-photo/teacher-standing-confidently-front-class_846334-1333.jpg" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">Courage to Lead Change</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Sartika’s decision to establish the first women’s school in Indonesia demonstrated her bravery in challenging societal norms and colonial restrictions, making her a role model for future generations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="data:image/jpeg;base64,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" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">  Perseverance in the Face of Adversity</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Despite the difficulties posed by colonial rule and traditional resistance, Dewi Sartika’s resilience helped her achieve her vision for accessible education for all women.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="data:image/jpeg;base64,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" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">Commitment to Community and Social Responsibility</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Dewi Sartika believed in the transformative power of collective progress, emphasizing education not only for personal gain but also for the betterment of families and communities.
+              </p>
             </div>
           </div>
         </div>
@@ -273,43 +358,43 @@
         <div class="row justify-content-center">
           <div class="col-12 mb-4 content-head text-center">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>How Much Do You Know About Ki Hajar Dewantara?</strong>
+              <strong>How Much Do You Know About Dewi Sartika?</strong>
             </h3>
-            <p class="mbr-fonts-style display-7 mt-3">Take this quiz and discover fun facts about his life and achievements!</p>
+            <p class="mbr-fonts-style display-7 mt-3">Take this quiz and discover fun facts about her life and achievements!</p>
           </div>
         </div>
         <div class="quiz-container">
           <!-- Question 1 -->
           <div class="quiz-item">
             <h4 class="quiz-question mbr-fonts-style display-5">
-              <strong>1. What was Ki Hajar Dewantara’s original name?</strong>
+              <strong>1. When was Dewi Sartika born?</strong>
             </h4>
             <ul class="quiz-options">
-              <li><input type="radio" name="q1" id="q1a" value="A" /> <label for="q1a">Raden Mas Soewardi Soerjaningrat</label></li>
-              <li><input type="radio" name="q1" id="q1b" value="B" /> <label for="q1b">Ki Ageng Suryomentaram</label></li>
-              <li><input type="radio" name="q1" id="q1c" value="C" /> <label for="q1c">Raden Saleh</label></li>
+              <li><input type="radio" name="q1" id="q1a" value="A" /> <label for="q1a">December 4, 1884</label></li>
+              <li><input type="radio" name="q1" id="q1b" value="B" /> <label for="q1b">April 21, 1879</label></li>
+              <li><input type="radio" name="q1" id="q1c" value="C" /> <label for="q1c">May 20, 1908</label></li>
             </ul>
           </div>
           <!-- Question 2 -->
           <div class="quiz-item">
             <h4 class="quiz-question mbr-fonts-style display-5">
-              <strong>2. What is the motto he is famous for?</strong>
+              <strong>2. What is the name of the first women’s school founded by Dewi Sartika?</strong>
             </h4>
             <ul class="quiz-options">
-              <li><input type="radio" name="q2" id="q2a" value="A" /> <label for="q2a">Unity in Diversity</label></li>
-              <li><input type="radio" name="q2" id="q2b" value="B" /> <label for="q2b">Tut Wuri Handayani</label></li>
-              <li><input type="radio" name="q2" id="q2c" value="C" /> <label for="q2c">From Darkness to Light</label></li>
+              <li><input type="radio" name="q2" id="q2a" value="A" /> <label for="q2a">Women’s Academy</label></li>
+              <li><input type="radio" name="q2" id="q2b" value="B" /> <label for="q2b">Sakola Istri</label></li>
+              <li><input type="radio" name="q2" id="q2c" value="C" /> <label for="q2c">Dewi’s Academy</label></li>
             </ul>
           </div>
           <!-- Question 3 -->
           <div class="quiz-item">
             <h4 class="quiz-question mbr-fonts-style display-5">
-              <strong>3. What educational movement did he establish?</strong>
+              <strong>3. What was Dewi Sartika’s main contribution to Indonesian society?</strong>
             </h4>
             <ul class="quiz-options">
-              <li><input type="radio" name="q3" id="q3a" value="A" /> <label for="q3a">Taman Siswa</label></li>
-              <li><input type="radio" name="q3" id="q3b" value="B" /> <label for="q3b">Boedi Oetomo</label></li>
-              <li><input type="radio" name="q3" id="q3c" value="C" /> <label for="q3c">Indische Partij</label></li>
+              <li><input type="radio" name="q3" id="q3a" value="A" /> <label for="q3a">Leading political movements</label></li>
+              <li><input type="radio" name="q3" id="q3b" value="B" /> <label for="q3b">Establishing women’s schools</label></li>
+              <li><input type="radio" name="q3" id="q3c" value="C" /> <label for="q3c">Promoting economic equality</label></li>
             </ul>
           </div>
           <button class="btn btn-primary mt-4" onclick="checkAnswers()">Submit Answers</button>
@@ -342,8 +427,8 @@
         margin-bottom: 30px;
       }
       .quiz-question {
-        margin-bottom: 15px;
-        color: #563d82;
+        margin-bottom: 10px;
+        color: #ad2917;
       }
       .quiz-options li {
         list-style: none;
@@ -417,7 +502,7 @@
         const correctAnswers = {
           q1: 'A',
           q2: 'B',
-          q3: 'A',
+          q3: 'B',
         };
         let score = 0;
         for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
