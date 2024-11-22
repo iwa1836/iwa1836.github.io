@@ -21,55 +21,121 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" /></noscript>
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/css/mbr-additional.css?rnd=1731811735194" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .goog-logo-link {
+        display: none !important;
+      }
+      .goog-te-gadget {
+        font-size: 0 !important;
+      }
+      .goog-te-gadget span {
+        display: none !important;
+      }
+    </style>
+
+    <style>
+      .grid-item img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+      }
+    </style>
+
+    <style>
+      .language-switcher {
+        text-align: right;
+        margin: 10px;
+        padding: 10px;
+      }
+      .goog-te-banner-frame {
+        display: block !important;
+        position: fixed !important;
+        top: 0;
+        z-index: 9999;
+      }
+    </style>
   </head>
   <body>
     <!-- Header Menu -->
     <iframe src="header_heroes_page.html"></iframe>
 
-    <!-- Video and Hero's Name -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=fj-BcPK90f0" id="video-and-name">
-      <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0)"></div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="content-wrap col-12 col-md-12">
-            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-              <strong>Ki Hajar Dewantara</strong>
-            </h1>
-            <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">The Indonesian Hero of Education</p>
-            <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#running-text">Explore Now</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
 
-    <!-- Running Text -->
-    <section data-bs-version="5.1" class="gallery10 cid-uuiqO6YB8v" id="running-text">
-      <div class="container-fluid">
-        <div class="loop-container">
-          <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">
-            ☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes
-          </div>
-          <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">
-            ☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes
-          </div>
+    <!-- Google Translate Script -->
+    <script>
+      // Inisialisasi Google Translate
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,id,zh-TW', autoDisplay: false }, 'google_translate_element');
+      }
+
+      // Memuat script Google Translate secara dinamis
+      function loadGoogleTranslateScript() {
+        const script = document.createElement('script');
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(script);
+      }
+
+      // Mengubah Bahasa
+      function translatePage() {
+        const lang = document.getElementById('language-select').value;
+        if (lang === 'en') {
+          // Reload halaman untuk mengatur ulang Google Translate
+          location.reload();
+        } else {
+          if (!window.google || !window.google.translate) {
+            loadGoogleTranslateScript();
+          } else {
+            triggerLanguageChange(lang);
+          }
+        }
+      }
+
+      // Memicu perubahan bahasa melalui Google Translate
+      function triggerLanguageChange(lang) {
+        const iframe = document.querySelector('.goog-te-banner-frame');
+        if (iframe) {
+          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const selectElement = innerDoc.querySelector('select');
+          if (selectElement) {
+            selectElement.value = lang;
+            selectElement.dispatchEvent(new Event('change'));
+          }
+        } else {
+          setTimeout(() => triggerLanguageChange(lang), 500);
+        }
+      }
+
+      // Muat script Google Translate saat halaman dimuat
+      loadGoogleTranslateScript();
+    </script>
+
+   <!-- Opening Video -->
+   <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://youtu.be/06cGclqRfcE?si=wHz9WJlF92KLezjZ" id="opening-video">
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="content-wrap col-12 col-md-12">
         </div>
-      </div>
-    </section>
+        </div>
+    </div>
+</section>
 
     <!-- Hero's Image and Basic Profile -->
     <section data-bs-version="5.1" class="header12 cid-uuiqO76SyA" id="basic-profile">
       <div class="text-center container">
+
         <div class="row mb-4 justify-content-center">
           <div class="col-12 col-md-4">
-            <img src="https://r.mobirisesite.com/905761/assets/images/photo-1469388062863-8702b8cbe-h_m3k66fsh.jpg" alt="" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl6Dam_qGTfD2PVxHdJkPucWejh6FK9kuqOw&s" alt="" />
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-12 content-head">
             <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
-              <strong>Ki Hajar Dewantara</strong>
+              <strong>Dewi Sartika</strong>
             </h1>
-            <p class="mbr-text mbr-fonts-style mb-4 display-7">Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani</p>
+            <p class="mbr-text mbr-fonts-style mb-4 display-7">Terlalu sedikit perhatian yang diberikan kepada kaum wanita, padahal mereka yang menentukan tinggi rendahnya derajat bangsa.</p>
             <div class="mbr-section-btn mt-4">
               <a class="btn btn-primary display-7" href="#about-the-hero">Get Started</a>
             </div>
@@ -88,7 +154,7 @@
                 <div class="col-12 content-head">
                   <div class="mbr-section-head">
                     <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                      <strong>About Ki Hajar Dewantara</strong>
+                      <strong>About Raden Ajeng Kartini</strong>
                     </h4>
                   </div>
                 </div>
@@ -97,65 +163,82 @@
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false" aria-controls="collapse1">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 1?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Childhood and Family Background</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 1.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Raden Ajeng Kartini was born on April 21, 1879, in Jepara, Central Java, into a noble family that highly upheld Javanese traditions. As the daughter of a regent, Kartini had the opportunity to attend ELS (Europeesche
+                        Lagere School), where she learned Dutch. However, strict Javanese customs prevented her from continuing her education after the age of 12 due to the tradition of seclusion. Despite this, Kartini’s passion for
+                        learning remained strong through her correspondence with friends in the Netherlands.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 2?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Struggle for Women's Education</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 2.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Kartini was deeply inspired by ideas of gender equality she discovered through books and letters from her Dutch friends. She realized that education was the key to elevating the status of Indonesian women, who at
+                        that time were constrained by tradition. Through her writings, Kartini tirelessly advocated for women's access to education, which became one of the most significant legacies of her struggle.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_17" aria-expanded="false" aria-controls="collapse3">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 3?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Thoughts and the Book "Out of Darkness Comes Light"</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse3_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 3.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        A collection of Kartini’s letters sent to her friends in Europe was later compiled and published by Abendanon under the title “Door Duisternis Tot Licht” or “Out of Darkness Comes Light.” This book became a symbol of
+                        Kartini’s efforts to raise awareness about the importance of women’s emancipation. Her thoughts not only focused on education but also on the freedom to think and the right of women to determine their own future.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_17" aria-expanded="false" aria-controls="collapse4">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 4?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Legacy and Kartini Day Commemoration</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse4_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 4.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Although R.A. Kartini passed away at the age of 25 after giving birth, her spirit of struggle lives on. The Indonesian government established April 21 as Kartini Day to honor her contributions to advocating for
+                        women’s rights. To this day, Kartini remains a symbol of emancipation, inspiring Indonesian women to continue progressing, creating, and contributing to the nation.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_17" aria-expanded="false" aria-controls="collapse5">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 5?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Kartini’s Vision for Social Reform</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse5_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 5.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Kartini’s dreams extended beyond education for women; she envisioned a society free from oppressive traditions and inequality. She believed in the importance of bridging the gap between social classes and empowering
+                        not only women but all marginalized groups. Her correspondence reflected her deep concern for the welfare of her people and her desire to see Indonesia move toward modernization and fairness. Kartini’s ideas laid the
+                        foundation for future social reforms that continue to inspire generations.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -169,82 +252,94 @@
     <!-- Gallery -->
     <section data-bs-version="5.1" class="gallery4 cid-uuiqO7qVLF" id="gallery">
       <div class="container-fluid gallery-wrapper">
+        <h4 class="gallery-title mbr-fonts-style align-center mb-4 display-2"><strong>Photos of Her</strong></h4>
         <div class="row justify-content-center">
           <div class="col-12 content-head"></div>
         </div>
         <div class="grid-container">
           <div class="grid-container-1" style="transform: translate3d(-200px, 0px, 0px)">
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1463595663992-cb0dc1d64-h_m3k6qx64.jpg" alt="" />
+              <img src="https://asset-2.tstatic.net/tribunpontianakwiki/foto/bank/images/Hari-Kartini.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1574687357639-60df588aa-h_m3k6m9ux.jpg" alt="" />
+              <img src="https://yppmalfalahjatirokeh.or.id/wp-content/uploads/2024/04/RA-Kartini-yahudi-feminisme-dan-pluralisme-agama.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1479888230021-c24f136d8-h_m3k6n0c9.jpg" alt="" />
+              <img src="https://bandungbergerak.id/cdn/3/9/0/2/3902.png" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1530819568329-97653eafb-h_m3k6pppz.jpg" alt="" />
+              <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/104/2024/04/20/20240420_135731-3512358641.jpg" alt="" />
             </div>
           </div>
           <div class="grid-container-2" style="transform: translate3d(-70px, 0px, 0px)">
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1484887603430-371459454eed.jpeg" alt="" />
+              <img
+                src="https://asset.kompas.com/crops/kbwdUzW3Tr0qbp1xVzvJV_dSbyU=/0x0:780x390/780x390/data/photo/2016/04/21/0540140COLLECTIE-TROPENMUSEUM-Studioportret-van-Raden-Ajeng-Kartini-met-haar-ouders-zussen-en-broer-TMnr-10018778780x390.jpg"
+                alt=""
+              />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488693161025-5f967b74de89.jpeg" alt="" />
+              <img src="https://static.republika.co.id/uploads/member/images/news/21wcn5x7q6.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1496293455970-f8581aae0e3b.jpeg" alt="" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmS6C1R5Zo8V83ETJtvwTjzMFTkmj1i7NlCg&s" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1532387482281-c56ef57652ec.jpeg" alt="" />
+              <img src="https://indonesia.go.id/assets/upload/headline//1556703283_sekolah_Kartini_696x444.png" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Hero's Story -->
-    <section data-bs-version="5.1" class="article9 cid-uuiqO7HdB8" id="story">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="card col-md-12 col-lg-10">
-            <div class="card-wrapper">
-              <div class="card-content-text">
-                <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
-                  <strong>Unveiling Heroic Legends</strong>
-                </h3>
-                <div class="row card-box align-left">
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="image-wrapper d-flex justify-content-center mt-3">
-                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488841714725-bb4c32d1a-h_m3k6rpu2.jpg" alt="" />
-              </div>
+    <!-- Value of His Life Section -->
+    <section class="heroic-cards" style="background-color: #f8f9fa; padding: 50px 0">
+      <div class="container" style="max-width: 1200px; margin: auto">
+        <!-- Section Title -->
+        <h2 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: #333; margin-bottom: 30px">Value of Her Life</h2>
+
+        <div class="row card-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+          <!-- Card 1 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="data:image/jpeg;base64,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" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">Advocacy for Gender Equality
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Kartini’s life emphasized the importance of gender equality, advocating for women to have the same opportunities as men, especially in education. Her vision inspired generations to challenge societal norms and pursue empowerment for women in Indonesia and beyond.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBLBJGPllflVOfr6lpvF7tunjcjk-tQUTOPA&s" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">Lifelong Passion for Learning</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Despite facing societal restrictions, Kartini’s unwavering passion for knowledge became a hallmark of her life. She demonstrated that learning can transcend barriers, encouraging others to seek education as a tool for personal and societal growth.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://t4.ftcdn.net/jpg/01/46/72/35/360_F_146723571_zB8yGSQye44pWBiUWZBdWIMxSdSm8Vuy.jpg" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333"> Courage to Challenge Traditions</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Kartini’s courage to question the oppressive customs of her time exemplifies her determination to create change. By challenging traditions like the seclusion of women, she paved the way for social progress and inspired others to question unjust practices.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://youtopia.social/wp-content/uploads/2021/08/shutterstock_1532068016.jpg" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">Legacy of Empathy and Social Responsibility</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Kartini’s writings reflected her deep empathy for the marginalized and her commitment to creating a more equitable society. Her legacy reminds us of the importance of compassion and the responsibility to uplift others, serving as a guiding principle for future generations.
+              </p>
             </div>
           </div>
         </div>
@@ -273,43 +368,43 @@
         <div class="row justify-content-center">
           <div class="col-12 mb-4 content-head text-center">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>How Much Do You Know About Ki Hajar Dewantara?</strong>
+              <strong>How Much Do You Know About R.A. Kartini?</strong>
             </h3>
-            <p class="mbr-fonts-style display-7 mt-3">Take this quiz and discover fun facts about his life and achievements!</p>
+            <p class="mbr-fonts-style display-7 mt-3">Take this quiz and discover fun facts about her life and achievements!</p>
           </div>
         </div>
         <div class="quiz-container">
           <!-- Question 1 -->
           <div class="quiz-item">
             <h4 class="quiz-question mbr-fonts-style display-5">
-              <strong>1. What was Ki Hajar Dewantara’s original name?</strong>
+              <strong>1. When was R.A. Kartini born?</strong>
             </h4>
             <ul class="quiz-options">
-              <li><input type="radio" name="q1" id="q1a" value="A" /> <label for="q1a">Raden Mas Soewardi Soerjaningrat</label></li>
-              <li><input type="radio" name="q1" id="q1b" value="B" /> <label for="q1b">Ki Ageng Suryomentaram</label></li>
-              <li><input type="radio" name="q1" id="q1c" value="C" /> <label for="q1c">Raden Saleh</label></li>
+              <li><input type="radio" name="q1" id="q1a" value="A" /> <label for="q1a"> August 17, 1945</label></li>
+              <li><input type="radio" name="q1" id="q1b" value="B" /> <label for="q1b">April 21, 1879</label></li>
+              <li><input type="radio" name="q1" id="q1c" value="C" /> <label for="q1c">June 1, 1901</label></li>
             </ul>
           </div>
           <!-- Question 2 -->
           <div class="quiz-item">
             <h4 class="quiz-question mbr-fonts-style display-5">
-              <strong>2. What is the motto he is famous for?</strong>
+              <strong>2. What is the title of the book that contains R.A. Kartini’s letters?</strong>
             </h4>
             <ul class="quiz-options">
-              <li><input type="radio" name="q2" id="q2a" value="A" /> <label for="q2a">Unity in Diversity</label></li>
-              <li><input type="radio" name="q2" id="q2b" value="B" /> <label for="q2b">Tut Wuri Handayani</label></li>
-              <li><input type="radio" name="q2" id="q2c" value="C" /> <label for="q2c">From Darkness to Light</label></li>
+              <li><input type="radio" name="q2" id="q2a" value="A" /> <label for="q2a">Out of Darkness Comes Light</label></li>
+              <li><input type="radio" name="q2" id="q2b" value="B" /> <label for="q2b">Women and Education</label></li>
+              <li><input type="radio" name="q2" id="q2c" value="C" /> <label for="q2c">Door Licht Tot Duisternis</label></li>
             </ul>
           </div>
           <!-- Question 3 -->
           <div class="quiz-item">
             <h4 class="quiz-question mbr-fonts-style display-5">
-              <strong>3. What educational movement did he establish?</strong>
+              <strong>3.What was the main value R.A. Kartini fought for?</strong>
             </h4>
             <ul class="quiz-options">
-              <li><input type="radio" name="q3" id="q3a" value="A" /> <label for="q3a">Taman Siswa</label></li>
-              <li><input type="radio" name="q3" id="q3b" value="B" /> <label for="q3b">Boedi Oetomo</label></li>
-              <li><input type="radio" name="q3" id="q3c" value="C" /> <label for="q3c">Indische Partij</label></li>
+              <li><input type="radio" name="q3" id="q3a" value="A" /> <label for="q3a">Economic success</label></li>
+              <li><input type="radio" name="q3" id="q3b" value="B" /> <label for="q3b">Education for women</label></li>
+              <li><input type="radio" name="q3" id="q3c" value="C" /> <label for="q3c">Political freedom</label></li>
             </ul>
           </div>
           <button class="btn btn-primary mt-4" onclick="checkAnswers()">Submit Answers</button>
@@ -342,8 +437,8 @@
         margin-bottom: 30px;
       }
       .quiz-question {
-        margin-bottom: 15px;
-        color: #563d82;
+        margin-bottom: 10px;
+        color: #ad2917;
       }
       .quiz-options li {
         list-style: none;
@@ -415,9 +510,9 @@
     <script>
       function checkAnswers() {
         const correctAnswers = {
-          q1: 'A',
-          q2: 'B',
-          q3: 'A',
+          q1: 'B',
+          q2: 'A',
+          q3: 'B',
         };
         let score = 0;
         for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
