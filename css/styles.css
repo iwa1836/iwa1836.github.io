@@ -1,3 +1,14 @@
 .navbar-fixed-top {
     top: auto;
 }
+
+.opening-video {
+    width: 100vw; /* Ensures the container takes the full width of the viewport */
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents content overflow */
+}
