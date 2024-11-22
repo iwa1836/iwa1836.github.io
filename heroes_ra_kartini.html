@@ -116,39 +116,43 @@
 <section 
   data-bs-version="5.1" 
   class="header18 cid-uuiqO6OSxL mbr-fullscreen" 
-  id="opening-image" 
-  style="
-    background-image: url('images/Krem ilustrasi Ucapan Hari Kartini Banner.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  "
->
+  id="opening-image">
 </section>
 
 <style>
   /* Responsiveness for the opening image section */
   #opening-image {
-    height: 100vh; /* Fills the viewport height on large devices */
+    background-image: url('images/Krem ilustrasi Ucapan Hari Kartini Banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; /* Fill the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  /* Ensure full responsiveness for smaller devices */
   @media (max-width: 768px) {
     #opening-image {
-      background-size: contain; /* Ensures the entire image is visible on smaller devices */
-      background-position: top center; /* Centers the image at the top */
-      height: auto; /* Adjust height to fit content */
+      background-size: contain; /* Keep the whole image visible */
+      height: 100%; /* Allow content height to adapt */
     }
   }
 
   @media (max-width: 480px) {
     #opening-image {
       background-size: contain;
-      background-position: top center;
-      height: auto; /* Allows for scrolling if necessary */
+      background-position: top center; /* Focus on the center-top of the image */
+      height: auto; /* Adjust height for scrolling */
     }
+  }
+
+  /* Additional safeguard for better adaptability */
+  html, body {
+    margin: 0;
+    padding: 0;
   }
 </style>
 
