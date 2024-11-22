@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="https://r.mobirisesite.com/905761/assets/images/photo-1497942304796-b8bc2cc898f3.jpeg" type="image/x-icon">
     <meta name="description" content="Explore the fascinating history of heroes, their legendary tales, and the impact they have had on society throughout the ages.">
 
-    <title>Ki Hajar Dewantara</title>
+    <title>Culture Places</title>
 
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1731811735194">
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/bootstrap/css/bootstrap.min.css?rnd=1731811735194">
@@ -21,55 +21,827 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/css/mbr-additional.css?rnd=1731811735194" type="text/css">
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+/* Places to Visit Section */
+.places-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.places-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.place-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.place-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.place-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover .place-info {
+    transform: translateY(0);
+}
+
+.place-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.place-info p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #ffcc00;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+    background: #e6b800;
+    color: white;
+}
+
+/* Bali Section Styling */
+.bali-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    margin: 2rem 0;
+}
+
+.bali-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.bali-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bali-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+.bali-description {
+    text-align: left;
+    color: #333;
+    padding: 0 1rem;
+}
+
+.bali-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e67e00;
+    margin-bottom: 1rem;
+}
+
+.bali-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-bali {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff9800;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-bali:hover {
+    background-color: #e67e00;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .bali-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .bali-description {
+        padding: 0;
+    }
+
+    .bali-image .main-image {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Raja Ampat Section Styling */
+.raja-ampat-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f3f9ff;
+    margin: 2rem 0;
+}
+
+.raja-ampat-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.raja-ampat-description {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.raja-ampat-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin-bottom: 1rem;
+}
+
+.raja-ampat-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #005fa3;
+}
+
+.raja-ampat-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.raja-ampat-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .raja-ampat-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .raja-ampat-description {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Borobudur Section Styling */
+.borobudur-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+    margin: 2rem 0;
+}
+
+.borobudur-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.borobudur-description {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.borobudur-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8a4d17;
+    margin-bottom: 1rem;
+}
+
+.borobudur-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-borobudur {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #8a4d17;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-borobudur:hover {
+    background-color: #6e3911;
+}
+
+.borobudur-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.borobudur-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .borobudur-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .borobudur-description {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Raja Ampat Section Styling */
+.raja-ampat-section-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f3f9ff;
+    margin: 2rem 0;
+}
+
+.raja-ampat-container-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.raja-ampat-description-1 {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.raja-ampat-title-1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #a21c0d;
+    margin-bottom: 1rem;
+}
+
+.raja-ampat-text-1 {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-1 {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #a21c0d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-1:hover {
+    background-color: #4f0909;
+}
+
+.raja-ampat-image-1 .main-image-1 {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.raja-ampat-image-1 .main-image-1:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .raja-ampat-container-1 {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .raja-ampat-description-1 {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Panel Styling */
+.panel-body {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.raja-ampat-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Styling untuk Destination Card */
+.destination {
+    background: #fff;
+    border-radius: 15px; /* Membulatkan sudut kartu */
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Shadow lebih lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek animasi */
+    display: flex;
+    flex-direction: column; /* Layout vertikal */
+}
+
+.destination:hover {
+    transform: scale(1.05); /* Efek zoom pada kartu */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+/* Gambar Destination */
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9; /* Ukuran gambar seragam */
+    object-fit: cover; /* Pastikan gambar memenuhi elemen */
+    transition: transform 0.3s ease; /* Animasi zoom saat hover */
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1); /* Zoom-in pada gambar saat hover */
+}
+
+/* Judul Destination */
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin: 0.8rem 1rem 0;
+    text-align: center; /* Pusatkan teks */
+}
+
+/* Deskripsi Destination */
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify; /* Rata kanan-kiri untuk tampilan rapi */
+    flex-grow: 1; /* Pastikan teks memenuhi ruang yang tersedia */
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .raja-ampat-destinations {
+        grid-template-columns: 1fr; /* Grid menjadi satu kolom di layar kecil */
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.bali-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.destination {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1);
+}
+
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin: 0.8rem 1rem 0;
+    text-align: center;
+}
+
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .bali-destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.borobudur-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.destination {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1);
+}
+
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #8a4d17; /* Warna cokelat untuk nuansa budaya */
+    margin: 0.8rem 1rem 0;
+    text-align: center;
+}
+
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .borobudur-destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+    
+.quiz-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centers the quiz items horizontally */
+}
+
+.quiz-item {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: auto; /* Removes fixed width, allows it to adapt to the image */
+    display: inline-block; /* Ensures the box adjusts to the content */
+}
+
+.quiz-image {
+    max-width: 500px;
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.quiz-question {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%; /* Ensures buttons stretch to fit the container */
+}
+
+.quiz-option {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-option:hover {
+    background-color: #ddd;
+}
+
+.quiz-option:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.quiz-result {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+    </style>
 </head>
 <body>
     <!-- Header Menu -->
     <iframe src="header_culture_page.html"></iframe>
 
     <!-- Video and Hero's Name -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=fj-BcPK90f0" id="video-and-name">
+    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://youtu.be/XrdVOE-WR9o?si=8-FdpfW2KCju1RA9" id="video-and-name">
         <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
         <div class="container-fluid">
             <div class="row">
             <div class="content-wrap col-12 col-md-12">
                 <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-                    <strong>Ki Hajar Dewantara</strong>
+                    <strong>Indonesian Ethnics</strong>
                 </h1>
-                <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">The Indonesian Hero of Education</p>
-                <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#running-text">Explore Now</a></div>
+                <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Discover diverse traditions, stunning crafts, and timeless heritage.</p>
+                <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#places">Explore Now</a></div>
             </div>
             </div>
         </div>
     </section>
 
-    <!-- Running Text -->
-    <section data-bs-version="5.1" class="gallery10 cid-uuiqO6YB8v" id="running-text">
-        <div class="container-fluid">
-            <div class="loop-container">
-                <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
-                <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
+    <!-- Places to Visit Section -->
+    <section id="places" class="places-section">
+        <div class="places-grid">
+            <!-- Card 1: Dayak -->
+            <div class="place-card">
+                <img src="images/dayaktribe1.jpg" alt="Bali">
+                <div class="place-info">
+                    <h3>Dayak Tribe</h3>
+                    <p>Explore the rich traditions, unique culture, and vibrant heritage of the indigenous Dayak people of Borneo.</p>
+                    <a href="#basic-profile" class="btn-learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Raja Ampat -->
+            <div class="place-card">
+                <img src="images/asmattribe1.jpg" alt="Raja Ampat">
+                <div class="place-info">
+                    <h3>Asmat Tribe</h3>
+                    <p>Discover the artistic spirit, ancestral traditions, and unique way of life of the Asmat people from Papua.</p>
+                    <a href="#raja-ampat-profile" class="btn-learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Borobudur -->
+            <div class="place-card">
+                <img src="images/jawatribe1.jpg" alt="Borobudur">
+                <div class="place-info">
+                    <h3>Javanese Tribe</h3>
+                    <p>Experience the rich traditions, timeless art, and profound cultural heritage of the Javanese people of Indonesia.</p>
+                    <a href="#borobudur-profile" class="btn-learn-more">Learn More</a>
+                </div>
+            </div>
+
+             <!-- Card 4: Palembang -->
+             <div class="place-card">
+                <img src="images/palembangtribe2.jpg" alt="Raja Ampat">
+                <div class="place-info">
+                    <h3>Palembang Tribe</h3>
+                    <p>Explore the vibrant traditions, exquisite songket weaving, and rich cultural heritage of the Palembang people of South Sumatra.</p>
+                    <a href="#raja-ampat-profile" class="btn-learn-more">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Hero's Image and Basic Profile -->
-    <section data-bs-version="5.1" class="header12 cid-uuiqO76SyA" id="basic-profile">
-        <div class="text-center container">
-            <div class="row mb-4 justify-content-center">
-                <div class="col-12 col-md-4">
-                    <img src="https://r.mobirisesite.com/905761/assets/images/photo-1469388062863-8702b8cbe-h_m3k66fsh.jpg" alt="">
-                </div>
+    <section id="basic-profile" class="bali-section">
+        <div class="bali-container">
+            <!-- Foto Utama -->
+            <div class="bali-image">
+                <img src="images/dayak1.jpg" alt="Bali" class="main-image">
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12 content-head">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
-                        <strong>Ki Hajar Dewantara</strong>
-                    </h1>
-                    <p class="mbr-text mbr-fonts-style mb-4 display-7">Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani</p>
-                    <div class="mbr-section-btn mt-4">
-                        <a class="btn btn-primary display-7" href="#about-the-hero">Get Started</a>
-                    </div>
-                </div>
+            <!-- Penjelasan Umum -->
+            <div class="bali-description">
+                <h1 class="bali-title">
+                    <strong>Dayak Tribe</strong>
+                </h1>
+                <p class="bali-text">
+                    The Dayak Tribe, indigenous to the vast rainforests of Borneo (Kalimantan in Indonesia), is a collective term for over 200 ethnic subgroups that share similar traditions, languages, and customs. Known for their deep connection to nature, the Dayak people are skilled in agriculture, hunting, and craftsmanship. They are renowned for their intricate hand-carved designs, traditional longhouses called Rumah Betang, and ceremonial dances that reflect their spiritual beliefs.
+                </p>
+                <p class="bali-text">
+                    The Dayak culture is steeped in animism and reverence for ancestors, with rituals and festivals such as Tiwah, a sacred burial ceremony, playing a significant role in their lives. They also create stunning beadwork, textiles, and traditional tattoos that serve as symbols of identity and achievement.
+                </p>
+                <p class="bali-text">
+                    Today, while many Dayak communities embrace modernity, they strive to preserve their unique traditions and advocate for the protection of their ancestral lands from deforestation and exploitation. Their rich heritage stands as a testament to Indonesia's cultural diversity.
+                </p>
+                <a href="#bootstrap-accordion_17" class="btn-explore-bali">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="raja-ampat-profile" class="raja-ampat-section">
+        <div class="raja-ampat-container">
+            <!-- Penjelasan Umum -->
+            <div class="raja-ampat-description">
+                <h1 class="raja-ampat-title">
+                    <strong>Asmat tribe</strong>
+                </h1>
+                <p class="raja-ampat-text">
+                    The Asmat Tribe, native to Papua, Indonesia, is one of the most iconic and culturally rich indigenous groups in the world. Known as master woodcarvers, the Asmat people create intricate sculptures and artifacts that hold profound spiritual significance. Their art often depicts ancestors, spirits, and elements of nature, reflecting their deep connection to the spiritual world.
+                </p>
+                <p class="raja-ampat-text">
+                    The Asmat live in close harmony with their environment, relying on rivers, mangroves, and forests for sustenance. Traditional houses, called jeuw, are built on stilts to adapt to the swampy terrain. Their communal lifestyle emphasizes the importance of kinship and collaboration in daily activities.                </p>
+                    <p class="raja-ampat-text">
+                        Rituals and ceremonies are central to Asmat culture, with festivals such as Bis Pole Ceremony honoring ancestors and ensuring balance between the living and the spiritual world. Despite modern influences, the Asmat people work diligently to preserve their heritage and traditions, standing as a vibrant example of Indonesia's diverse cultural tapestry.   </p>              
+                        <a href="#bootstrap-accordion_17" class="btn-explore">Discover More</a>
+            </div>
+            <!-- Foto Utama -->
+            <div class="raja-ampat-image">
+                <img src="images/asmat1.webp" alt="Raja Ampat" class="main-image">
+            </div>
+        </div>
+    </section>
+    
+    <section id="borobudur-profile" class="borobudur-section">
+        <div class="borobudur-container">
+            <!-- Foto Utama -->
+            <div class="borobudur-image">
+                <img src="images/jawa1.jpeg" alt="Borobudur" class="main-image">
+            </div>
+            <!-- Penjelasan Umum -->
+            <div class="borobudur-description">
+                <h1 class="borobudur-title">
+                    <strong>Javanese Tribe</strong>
+                </h1>
+                <p class="borobudur-text">
+                    The Javanese Tribe is the largest ethnic group in Indonesia, primarily inhabiting the central and eastern parts of Java Island. Renowned for their deep-rooted cultural traditions, the Javanese people embody a harmonious balance between spirituality, art, and daily life. Their values are often guided by kejawen, a philosophy emphasizing inner peace, respect, and social harmony.
+                </p>
+                <p class="borobudur-text">
+                    Javanese culture is richly expressed through classical arts such as wayang kulit (shadow puppetry), gamelan (traditional orchestra), and elegant dances like bedhaya. Their architectural heritage includes iconic landmarks like Kraton (royal palaces) and ancient temples, such as Borobudur and Prambanan.
+                </p>
+                <p class="borobudur-text">
+                    The tribe's language, Basa Jawa, includes various speech levels reflecting respect and social hierarchy. Culinary traditions, including dishes like nasi liwet and gudeg, add to their cultural wealth. While embracing modernity, the Javanese people continue to preserve their timeless customs, contributing to Indonesia's diverse cultural mosaic.
+                </p>
+                <a href="#bootstrap-accordion_17" class="btn-explore-borobudur">Discover More</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="raja-ampat-profile-1" class="raja-ampat-section-1">
+        <div class="raja-ampat-container-1">
+            <!-- Penjelasan Umum -->
+            <div class="raja-ampat-description-1">
+                <h1 class="raja-ampat-title-1">
+                    <strong>Palembang tribe</strong>
+                </h1>
+                <p class="raja-ampat-text-1">
+                    The Palembang Tribe, native to South Sumatra, Indonesia, is known for its rich cultural heritage and historical significance as the heart of the ancient Srivijaya Kingdom. The Palembang people are celebrated for their artistry, particularly the intricate weaving of songket, a luxurious handwoven fabric adorned with gold or silver threads, symbolizing elegance and tradition.
+                </p>
+                <p class="raja-ampat-text-1">
+                    Their culture is deeply influenced by a blend of Malay traditions and Islamic teachings, reflected in their traditional attire, music, and dances, such as Tari Gending Sriwijaya. The Palembang language, a variant of Malay, is widely spoken alongside Bahasa Indonesia.
+                </p>
+                <p class="raja-ampat-text-1">
+                    Palembang cuisine, like the famous pempek (fishcake) and tekwan (fish soup), is a hallmark of their culinary identity. The tribe also holds grand ceremonies and festivals, such as Sedekah Rame and Lebaran Kecil, showcasing their vibrant traditions. Despite modern developments, the Palembang people maintain their cultural pride and continue to honor their rich ancestral legacy.
+                </p>              
+                        <a href="#bootstrap-accordion_17" class="btn-explore-1">Discover More</a>
+            </div>
+            <!-- Foto Utama -->
+            <div class="raja-ampat-image-1">
+                <img src="images/palembang1.webp" alt="Raja Ampat" class="main-image-1">
             </div>
         </div>
     </section>
@@ -84,77 +856,166 @@
                             <div class="col-12 content-head">
                                 <div class="mbr-section-head">
                                     <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                                        <strong>About Ki Hajar Dewantara</strong></h4>
+                                        <strong>Some Destinations in Indonesia</strong></h4>
                                 </div>
                             </div>
                         </div>
                         <div id="bootstrap-accordion_17" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
                             <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false" aria-controls="collapse1">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 1?</h6>
+                                <div class="card-header" role="tab" id="headingBali">
+                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapseBali" aria-expanded="false" aria-controls="collapseBali">
+                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Dayak Tribe</h6>
                                         <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                                     </a>
                                 </div>
-                                <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
+                                <div id="collapseBali" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingBali" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                                     <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 1.</p>
+                                        <div class="bali-destinations">
+                                            <!-- Destination 1 -->
+                                            <div class="destination">
+                                                <img src="images/rumahbetang.png" alt="Tanah Lot Temple" class="destination-image">
+                                                <h5 class="destination-title">Rumah Betang</h5>
+                                                <p class="destination-text">The Dayak Rumah Betang is a traditional stilted longhouse designed for communal living, reflecting the values of unity, cultural heritage, and adaptation to the rainforest environment.</p>
+                                            </div>
+                                            <!-- Destination 2 -->
+                                            <div class="destination">
+                                                <img src="images/dayak2.jpg" alt="Ubud Rice Terraces" class="destination-image">
+                                                <h5 class="destination-title">Dayak Traditional dances</h5>
+                                                <p class="destination-text">Dayak traditional dance is a vibrant expression of their cultural heritage, featuring dynamic movements, ornate costumes, and rhythmic music. These dances often convey stories, rituals, and spiritual beliefs.</p>
+                                            </div>
+                                            <!-- Destination 3 -->
+                                            <div class="destination">
+                                                <img src="images/tato.jpg" alt="Uluwatu Temple" class="destination-image">
+                                                <h5 class="destination-title">Dayak Tattoos</h5>
+                                                <p class="destination-text">Dayak tattoos are a sacred art form, symbolizing identity, life achievements, and spiritual protection. Crafted with intricate designs, they reflect the deep cultural and spiritual traditions of the Dayak people.</p>
+                                            </div>
+                                            <!-- Destination 4 -->
+                                            <div class="destination">
+                                                <img src="images/dayakshield.jpg" alt="Mount Batur" class="destination-image">
+                                                <h5 class="destination-title">Dayak Shield</h5>
+                                                <p class="destination-text">The Dayak shield, or Kelengkeng, is a traditional wooden shield adorned with intricate carvings and patterns. It symbolizes protection, cultural identity, and the warrior spirit of the Dayak people.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>                            
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Asmat Tribe</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
+                                <div class="panel-body">
+                                    <div class="raja-ampat-destinations">
+                                        <!-- Destination 1 -->
+                                        <div class="destination">
+                                            <img src="images/wood.jpg" alt="Piaynemo" class="destination-image">
+                                            <h5 class="destination-title">Wood Carvings</h5>
+                                            <p class="destination-text">Asmat wood carvings are renowned for their intricate designs and spiritual significance. Crafted from sago or mangrove wood, these carvings often depict ancestors, animals, and spirits, symbolizing connection, strength, and cultural heritage.</p>
+                                        </div>
+                                        <!-- Destination 2 -->
+                                        <div class="destination">
+                                            <img src="images/canoes.webp" alt="Wayag Islands" class="destination-image">
+                                            <h5 class="destination-title">Asmat Canoes</h5>
+                                            <p class="destination-text">Asmat canoes are handcrafted from sturdy mangrove wood, featuring elongated designs and intricate carvings. These canoes are essential for transportation and ceremonies, symbolizing the Asmat's deep connection to rivers and ancestral traditions.</p>
+                                        </div>
+                                        <!-- Destination 3 -->
+                                        <div class="destination">
+                                            <img src="images/ceremonial.jpg" alt="Manta Sandy" class="destination-image">
+                                            <h5 class="destination-title">Asmat Ceremonial Feast</h5>
+                                            <p class="destination-text">Asmat ceremonial feasts are sacred gatherings honoring ancestors and significant events. They feature traditional dances, music, and symbolic rituals, fostering community bonds and preserving cultural heritage.</p>
+                                        </div>
+                                        <!-- Destination 4 -->
+                                        <div class="destination">
+                                            <img src="images/asmatwar.jpg" alt="Cape Kri" class="destination-image">
+                                            <h5 class="destination-title">Asmat War Shield</h5>
+                                            <p class="destination-text">The Asmat war shield is a large, intricately carved wooden shield used in combat and ceremonies. Adorned with symbolic motifs, it represents protection, strength, and connection to ancestral spirits.</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>                        
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Javanese Tribe</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
+                                <div class="panel-body">
+                                    <div class="borobudur-destinations">
+                                        <!-- Destination 1 -->
+                                        <div class="destination">
+                                            <img src="https://cdn.britannica.com/16/146316-050-292A044A/Wayang-kulit-puppets.jpg" alt="Borobudur Temple" class="destination-image">
+                                            <h5 class="destination-title">Wayang Kulit</h5>
+                                            <p class="destination-text">Wayang Kulit is a traditional Indonesian shadow puppet theater, using intricately carved leather puppets to depict epic stories like *Ramayana* and *Mahabharata*. Accompanied by gamelan music, it conveys cultural, spiritual, and moral lessons.</p>
+                                        </div>
+                                        <!-- Destination 2 -->
+                                        <div class="destination">
+                                            <img src="https://musicdancetheatre.asu.edu/sites/default/files/styles/image_block/public/2022-09/gamelan.jpg?itok=yDeiEFr3" alt="Pawon Temple" class="destination-image">
+                                            <h5 class="destination-title">Gamelan Orchestra</h5>
+                                            <p class="destination-text">The Gamelan orchestra is a traditional Indonesian ensemble featuring bronze gongs, metallophones, drums, and bamboo flutes. Its harmonious, layered melodies accompany dances, rituals, and shadow puppet performances, embodying Indonesia's rich cultural heritage.
+                                            </p>
+                                        </div>
+                                        <!-- Destination 3 -->
+                                        <div class="destination">
+                                            <img src="https://www.shutterstock.com/shutterstock/photos/2040041369/display_1500/stock-vector-batik-pattern-from-solo-central-java-indonesia-consists-of-leaf-and-flower-patterns-2040041369.jpg" alt="Mendut Temple" class="destination-image">
+                                            <h5 class="destination-title">Batik</h5>
+                                            <p class="destination-text">Batik is a traditional Indonesian textile art created through a wax-resist dyeing process. Known for its intricate patterns and vibrant colors, batik reflects cultural stories, regional identities, and artistic heritage.</p>
+                                        </div>
+                                        <!-- Destination 4 -->
+                                        <div class="destination">
+                                            <img src="https://st.depositphotos.com/1007970/1242/i/950/depositphotos_12423319-stock-photo-the-kraton-yogyakarta-java-indonesia.jpg" alt="Punthuk Setumbu Hill" class="destination-image">
+                                            <h5 class="destination-title">Kraton</h5>
+                                            <p class="destination-text">The royal palaces of Java, known as Kraton, are majestic cultural centers showcasing traditional Javanese architecture and heritage. These palaces serve as residences for royalty and hubs for preserving arts, rituals, and history.</p>
+                                        </div>
+                                    </div>                                   
+                                    </div>
+                                    </div>
                             </div>
                             <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 2?</h6>
+                                <div class="card-header" role="tab" id="headingBali">
+                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapseBali" aria-expanded="false" aria-controls="collapseBali">
+                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Palembang Tribe</h6>
                                         <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                                     </a>
                                 </div>
-                                <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
+                                <div id="collapseBali" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingBali" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                                     <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 2.</p>
+                                        <div class="bali-destinations">
+                                            <!-- Destination 1 -->
+                                            <div class="destination">
+                                                <img src="https://media.karousell.com/media/photos/products/2022/11/10/songket_palembang_1668053180_5737eb87_progressive.jpg" alt="Tanah Lot Temple" class="destination-image">
+                                                <h5 class="destination-title">Songket Palembang</h5>
+                                                <p class="destination-text">Palembang Songket is a luxurious handwoven fabric from Palembang, South Sumatra, adorned with gold or silver threads. Renowned for its intricate patterns, it symbolizes elegance, cultural heritage, and is often worn for special ceremonies.</p>
+                                            </div>
+                                            <!-- Destination 2 -->
+                                            <div class="destination">
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Masjid_Agung_Palembang.jpg" alt="Ubud Rice Terraces" class="destination-image">
+                                                <h5 class="destination-title">Great Mosques of Palembang</h5>
+                                                <p class="destination-text">The Great Mosque of Palembang, also known as *Masjid Agung Palembang*, is a historic landmark blending Javanese, Chinese, and Malay architectural styles. Built in 1738, it serves as a spiritual and cultural center for the region.</p>
+                                            </div>
+                                            <!-- Destination 3 -->
+                                            <div class="destination">
+                                                <img src="https://asset-2.tstatic.net/tribunnewswiki/foto/bank/images/Sungai-Musi.jpg" alt="Uluwatu Temple" class="destination-image">
+                                                <h5 class="destination-title">Musi River</h5>
+                                                <p class="destination-text">The Musi River, stretching across South Sumatra, is a vital waterway known as the "Batanghari Sembilan." It connects Palembang to the surrounding regions, serving as a hub for trade, culture, and iconic landmarks like the Ampera Bridge and Kemaro Island.</p>
+                                            </div>
+                                            <!-- Destination 4 -->
+                                            <div class="destination">
+                                                <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/2c/0f/62.jpg" alt="Mount Batur" class="destination-image">
+                                                <h5 class="destination-title">Ampera Bridge</h5>
+                                                <p class="destination-text">The Ampera Bridge is an iconic landmark in Palembang, South Sumatra, spanning the Musi River. Built in 1965, this majestic red bridge symbolizes the city's pride, connecting cultural and economic hubs while offering stunning views of the river.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_17" aria-expanded="false" aria-controls="collapse3">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 3?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse3_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 3.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_17" aria-expanded="false" aria-controls="collapse4">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 4?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse4_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 4.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_17" aria-expanded="false" aria-controls="collapse5">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 5?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse5_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 5.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            </div>                            
+                        </div>                      
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -162,174 +1023,70 @@
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section data-bs-version="5.1" class="gallery4 cid-uuiqO7qVLF" id="gallery">
-        <div class="container-fluid gallery-wrapper">
-            <div class="row justify-content-center">
-                <div class="col-12 content-head">
-                </div>
-            </div>
-            <div class="grid-container">
-                <div class="grid-container-1" style="transform: translate3d(-200px, 0px, 0px);">
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1463595663992-cb0dc1d64-h_m3k6qx64.jpg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1574687357639-60df588aa-h_m3k6m9ux.jpg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1479888230021-c24f136d8-h_m3k6n0c9.jpg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1530819568329-97653eafb-h_m3k6pppz.jpg" alt="">
-                    </div>
-                </div>
-                <div class="grid-container-2" style="transform: translate3d(-70px, 0px, 0px);">
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1484887603430-371459454eed.jpeg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488693161025-5f967b74de89.jpeg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1496293455970-f8581aae0e3b.jpeg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1532387482281-c56ef57652ec.jpeg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero's Story -->
-    <section data-bs-version="5.1" class="article9 cid-uuiqO7HdB8" id="story">
+    <section id="quiz" class="quiz-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="card col-md-12 col-lg-10">
-                    <div class="card-wrapper">
-                        <div class="card-content-text">
-                            <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
-                                <strong>Unveiling Heroic Legends</strong>
-                            </h3>
-                            <div class="row card-box align-left">
-                                <div class="item features-without-image col-12">
-                                    <div class="item-wrapper">
-                                        <p class="mbr-text mbr-fonts-style display-7">Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story.</p>
-                                    </div>
-                                </div>
-                                <div class="item features-without-image col-12">
-                                    <div class="item-wrapper">
-                                        <p class="mbr-text mbr-fonts-style display-7">Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story.</p>
-                                    </div>
-                                </div>
-                                <div class="item features-without-image col-12">
-                                    <div class="item-wrapper">
-                                        <p class="mbr-text mbr-fonts-style display-7">Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image-wrapper d-flex justify-content-center mt-3">
-                            <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488841714725-bb4c32d1a-h_m3k6rpu2.jpg" alt="">
-                        </div>
+            <h2 class="text-center">Guess the Tribe</h2>
+            <p class="text-center-can">Can you identify these iconic traditions and cultures of Indonesian tribes?</p>
+            <div class="quiz-container">
+                <!-- Pertanyaan 1 -->
+                <div class="quiz-item">
+                    <img src="https://beborneo.com/wp-content/uploads/2016/02/tumbang-korik-longhouse.jpg" alt="Dayak Longhouse" class="quiz-image">
+                    <p class="quiz-question">Which tribe is known for their traditional longhouses?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Dayak Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Asmat Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Javanese Tribe</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 2 -->
+                <div class="quiz-item">
+                    <img src="images/wood.jpg" alt="Asmat Carvings" class="quiz-image">
+                    <p class="quiz-question">Which tribe is famous for their intricate wood carvings?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Palembang Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Asmat Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Dayak Tribe</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 3 -->
+                <div class="quiz-item">
+                    <img src="https://www.theluxurysignature.com/wp-content/uploads/2022/04/5397613899_972d0a7254_k.jpg" alt="Wayang Kulit" class="quiz-image">
+                    <p class="quiz-question">Which tribe is associated with Wayang Kulit (shadow puppetry)?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Javanese Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Asmat Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Dayak Tribe</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 4 -->
+                <div class="quiz-item">
+                    <img src="https://indonesiaexpat.id/wp-content/uploads/2023/11/Main-Image-Songket-Palembang-by-Digstraksi.jpg" alt="Palembang Songket" class="quiz-image">
+                    <p class="quiz-question">Which tribe is renowned for their luxurious songket weaving?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Javanese Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Dayak Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Palembang Tribe</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 5 -->
+                <div class="quiz-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-4yXpVACCzsy9OMZ7SYqAdsXVpE3aQ17PItkGH-Ba5mRvCkIIVYGSTqs4LJVTfvq1N4SOR6og24FeH9i3QLeazOmmW18dce1ocgDZhtFlCwXU6TV3aZDexb_gFIowrn0JtD022RFk-T0/s1600/tato-dayak.jpg" alt="Dayak Tattoos" class="quiz-image">
+                    <p class="quiz-question">Which tribe uses tattoos as a symbol of spiritual journeys?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Dayak Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Palembang Tribe</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Asmat Tribe</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Parallax -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO8agKr mbr-fullscreen mbr-parallax-background" id="parallax-1">
-        <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
-        <div class="container-fluid">
-            <div class="row">
+            <!-- Placeholder untuk hasil -->
+            <div class="quiz-result" id="quiz-result">
+                <p>You got <span id="score">0</span> out of 5 questions correct!</p>
             </div>
         </div>
     </section>
-
-    <!-- Parallax -->
-    <section data-bs-version="5.1" class="image02 cid-uuiqO8lxNq mbr-fullscreen mbr-parallax-background" id="parallax-2">
-        <div class="container">
-            <div class="row"></div>
-        </div>
-    </section>
-
-    <!-- Get Inspired by The Hero -->
-    <section data-bs-version="5.1" class="people05 cid-uuiqO7TL68" id="get-inspired">
-        <div class="container">
-            <div class="row mb-5 justify-content-center">
-                <div class="col-12 mb-0 content-head">
-                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                        <strong>Get Inspired by Ki Hajar Dewantara</strong>
-                    </h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="item features-without-image col-12 col-md-6 col-lg-4 active">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 1.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1679746584014-fb31d4eb0a5e.jpeg" alt="" data-slide-to="0" data-bs-slide-to="0">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 2.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1589571894960-20bbe2828d0a.jpeg" data-slide-to="1" data-bs-slide-to="1" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 3.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1626899798511-c3eaacb02846.jpeg" data-slide-to="2" data-bs-slide-to="2" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 4.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1545803928-04e3f4cdd4ed.jpeg" data-slide-to="4" data-bs-slide-to="4" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 5.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1497485692312-a26e1cc30f1d.jpeg" data-slide-to="6" data-bs-slide-to="6" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 6.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1692558588242-57cec1e32bba.jpeg" data-slide-to="7" data-bs-slide-to="7" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
+    
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
 
@@ -343,5 +1100,25 @@
     <script src="https://r.mobirisesite.com/905761/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1731811735195"></script>
     <script src="https://r.mobirisesite.com/905761/assets/scrollgallery/scroll-gallery.js?rnd=1731811735195"></script>
     <script src="https://r.mobirisesite.com/905761/assets/theme/js/script.js?rnd=1731811735195"></script>
+
+    <script>
+        let score = 0;
+
+function checkAnswer(button, status) {
+    if (status === 'correct') {
+        button.style.backgroundColor = 'green';
+        score++;
+    } else {
+        button.style.backgroundColor = 'red';
+    }
+    // Disable all buttons in the current question
+    const options = button.parentElement.querySelectorAll('.quiz-option');
+    options.forEach(opt => opt.disabled = true);
+
+    // Update score
+    document.getElementById('score').innerText = score;
+}
+
+        </script> 
 </body>
 </html>
