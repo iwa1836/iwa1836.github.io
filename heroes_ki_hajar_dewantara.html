@@ -68,12 +68,12 @@
                   <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="https://iwa1836.github.io/">HOME</a></span>
               </div>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <div class="hamburger">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                  </div>
+                <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
@@ -109,60 +109,12 @@
                   </li>
                 </ul>
               </div>
+              <!-- Google Translate Element -->
+              <div id="google_translate_element"></div>
+              <script type="text/javascript" src="script/script.js"></script>
           </div>
       </nav>
   </section>
-
-    <!-- Google Translate Element -->
-    <div id="google_translate_element"></div>
-
-    <!-- Google Translate Script -->
-    <script>
-      // Inisialisasi Google Translate
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,id,zh-TW', autoDisplay: false }, 'google_translate_element');
-      }
-
-      // Memuat script Google Translate secara dinamis
-      function loadGoogleTranslateScript() {
-        const script = document.createElement('script');
-        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        document.body.appendChild(script);
-      }
-
-      // Mengubah Bahasa
-      function translatePage() {
-        const lang = document.getElementById('language-select').value;
-        if (lang === 'en') {
-          // Reload halaman untuk mengatur ulang Google Translate
-          location.reload();
-        } else {
-          if (!window.google || !window.google.translate) {
-            loadGoogleTranslateScript();
-          } else {
-            triggerLanguageChange(lang);
-          }
-        }
-      }
-
-      // Memicu perubahan bahasa melalui Google Translate
-      function triggerLanguageChange(lang) {
-        const iframe = document.querySelector('.goog-te-banner-frame');
-        if (iframe) {
-          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-          const selectElement = innerDoc.querySelector('select');
-          if (selectElement) {
-            selectElement.value = lang;
-            selectElement.dispatchEvent(new Event('change'));
-          }
-        } else {
-          setTimeout(() => triggerLanguageChange(lang), 500);
-        }
-      }
-
-      // Muat script Google Translate saat halaman dimuat
-      loadGoogleTranslateScript();
-    </script>
 
     <!-- Opening Image with Local Background -->
     <section id="opening-image">
