@@ -8,14 +8,6 @@
     <link rel="shortcut icon" href="https://r.mobirisesite.com/905761/assets/images/photo-1497942304796-b8bc2cc898f3.jpeg" type="image/x-icon" />
     <meta name="description" content="Explore the fascinating history of heroes, their legendary tales, and the impact they have had on society throughout the ages." />
 
-    <style>
-      #google_translate_element {
-        margin-top: 10px;
-        text-align: center;
-        display: none; /* Initially hidden */
-      }
-    </style>
-
     <title>Ki Hajar Dewantara</title>
 
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1731811735194" />
@@ -29,75 +21,86 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" /></noscript>
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/css/mbr-additional.css?rnd=1731811735194" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .goog-logo-link {
+        display: none !important;
+      }
+      .goog-te-gadget {
+        font-size: 0 !important;
+      }
+      .goog-te-gadget span {
+        display: none !important;
+      }
+    </style>
+
+    <style>
+      .language-switcher {
+        text-align: right;
+        margin: 10px;
+        padding: 10px;
+      }
+      .goog-te-banner-frame {
+        display: block !important;
+        position: fixed !important;
+        top: 0;
+        z-index: 9999;
+      }
+    </style>
   </head>
   <body>
-    <script>
-      function translatePage() {
-        const lang = document.getElementById('language-select').value;
-
-        // Check if the selected language is English
-        if (lang === 'en') {
-          location.reload(); // Reload the page to revert to the original language
-          return;
-        }
-
-        // Dynamically load the Google Translate script
-        if (!document.querySelector('#google-translate-script')) {
-          const script = document.createElement('script');
-          script.id = 'google-translate-script';
-          script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-          document.body.appendChild(script);
-        } else {
-          initializeGoogleTranslate(lang);
-        }
-      }
-
-      // Google Translate initialization
-      function googleTranslateElementInit() {
-        const lang = document.getElementById('language-select').value;
-        initializeGoogleTranslate(lang);
-      }
-
-      function initializeGoogleTranslate(lang) {
-        const translateElement = new google.translate.TranslateElement(
-          {
-            pageLanguage: 'en',
-            includedLanguages: `${lang},en`, // Include the selected language and English
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          'google_translate_element'
-        );
-        document.getElementById('google_translate_element').style.display = 'block'; // Show translate element
-      }
-    </script>
-
     <!-- Header Menu -->
     <iframe src="header_heroes_page.html"></iframe>
-    <div class="language-switcher" style="text-align: right; margin: 10px; padding: 10px">
-      <label for="language-select" style="margin-right: 10px">Select Language:</label>
-      <select id="language-select" onchange="translatePage()" style="padding: 5px; border-radius: 5px">
-        <option value="en">English</option>
-        <option value="zh-TW">Chinese (Traditional)</option>
-      </select>
-    </div>
 
-    <div id="google_translate_element" style="display: none"></div>
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
 
-    <!-- Video and Hero's Name -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=fj-BcPK90f0" id="video-and-name">
-      <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0)"></div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="content-wrap col-12 col-md-12">
-            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-              <strong>Ki Hajar Dewantara</strong>
-            </h1>
-            <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">The Indonesian Hero of Education</p>
-            <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#running-text">Explore Now</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Google Translate Script -->
+    <script>
+      // Inisialisasi Google Translate
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,id,zh-TW', autoDisplay: false }, 'google_translate_element');
+      }
+
+      // Memuat script Google Translate secara dinamis
+      function loadGoogleTranslateScript() {
+        const script = document.createElement('script');
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(script);
+      }
+
+      // Mengubah Bahasa
+      function translatePage() {
+        const lang = document.getElementById('language-select').value;
+        if (lang === 'en') {
+          // Reload halaman untuk mengatur ulang Google Translate
+          location.reload();
+        } else {
+          if (!window.google || !window.google.translate) {
+            loadGoogleTranslateScript();
+          } else {
+            triggerLanguageChange(lang);
+          }
+        }
+      }
+
+      // Memicu perubahan bahasa melalui Google Translate
+      function triggerLanguageChange(lang) {
+        const iframe = document.querySelector('.goog-te-banner-frame');
+        if (iframe) {
+          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const selectElement = innerDoc.querySelector('select');
+          if (selectElement) {
+            selectElement.value = lang;
+            selectElement.dispatchEvent(new Event('change'));
+          }
+        } else {
+          setTimeout(() => triggerLanguageChange(lang), 500);
+        }
+      }
+
+      // Muat script Google Translate saat halaman dimuat
+      loadGoogleTranslateScript();
+    </script>
 
     <!-- Running Text -->
     <section data-bs-version="5.1" class="gallery10 cid-uuiqO6YB8v" id="running-text">
