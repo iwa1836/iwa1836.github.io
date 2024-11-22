@@ -533,7 +533,97 @@
         margin-bottom: 1.5rem;
     }
 }
+    
 
+    /* Gaya untuk section kuis */
+    .quiz-section {
+        padding: 70px 20px;
+        background-color: #897e82;
+        text-align: center;
+    }
+
+    .quiz-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #005fa3;
+    }
+
+    #quiz h2 {
+        color: #fff5ee; /* Warna oranye */
+        font-size: 2.5rem; /* Ukuran font */
+        font-weight: bold; /* Ketebalan font */
+        text-transform: uppercase; /* Opsional: Mengubah huruf menjadi kapital semua */
+    }
+
+    #quiz .text-center-can {
+        color: #f3f3f3; /* Ganti dengan warna yang diinginkan */
+        font-size: 1.2rem; /* Opsional: Ubah ukuran font */
+        font-style: italic; /* Opsional: Menambahkan gaya miring */
+    }
+    
+    .quiz-item {
+        background: #f0ecec;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 0 auto 15px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-question {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .quiz-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .quiz-option {
+        padding: 10px 20px;
+        background-color: #0077cc;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .quiz-option:hover {
+        background-color: #005fa3;
+    }
+
+    .quiz-option.correct {
+        background-color: #28a745;
+    }
+
+    .quiz-option.wrong {
+        background-color: #dc3545;
+    }
+
+    .quiz-result {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+        display: none;
+    }
 
     </style>
 </head>
@@ -657,10 +747,6 @@
             </div>
         </div>
     </section>
-    
-    
-
-    
     
 
     <!-- About The Hero -->
@@ -801,7 +887,69 @@
         </div>
     </section>
 
-
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2 class="text-center">Guess the Destination</h2>
+            <p class="text-center-can">Can you identify these iconic places in Indonesia?</p>
+            <div class="quiz-container">
+                <!-- Pertanyaan 1 -->
+                <div class="quiz-item">
+                    <img src="images/tanah lot.webp" alt="Tanah Lot Temple" class="quiz-image">
+                    <p class="quiz-question">What is the name of this place?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Tanah Lot</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Borobudur</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Raja Ampat</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 2 -->
+                <div class="quiz-item">
+                    <img src="images/raja.jpg" alt="Raja Ampat" class="quiz-image">
+                    <p class="quiz-question">What is the name of this place?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Mount Bromo</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Raja Ampat</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Komodo Island</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 3 -->
+                <div class="quiz-item">
+                    <img src="images/borobodur1.jpg" alt="Borobudur" class="quiz-image">
+                    <p class="quiz-question">What is the name of this place?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Tanah Lot</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Raja Ampat</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Borobudur</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 4 -->
+                <div class="quiz-item">
+                    <img src="images/mount batur.jpg" alt="Mount Bromo" class="quiz-image">
+                    <p class="quiz-question">What is the name of this place?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Lake Toba</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Raja Ampat</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Mount Bromo</button>
+                    </div>
+                </div>
+                <!-- Pertanyaan 5 -->
+                <div class="quiz-item">
+                    <img src="images/laketoba.jpg" alt="Lake Toba" class="quiz-image">
+                    <p class="quiz-question">What is the name of this place?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Lake Toba</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Komodo Island</button>
+                        <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Borobudur</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Placeholder untuk hasil -->
+            <div class="quiz-result" id="quiz-result">
+                <p>You got <span id="score">0</span> out of 5 questions correct!</p>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
 
@@ -815,5 +963,46 @@
     <script src="https://r.mobirisesite.com/905761/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1731811735195"></script>
     <script src="https://r.mobirisesite.com/905761/assets/scrollgallery/scroll-gallery.js?rnd=1731811735195"></script>
     <script src="https://r.mobirisesite.com/905761/assets/theme/js/script.js?rnd=1731811735195"></script>
+
+    <script>
+        let score = 0; // Variabel untuk mencatat skor
+        let totalQuestions = 5; // Total jumlah pertanyaan
+        let answeredQuestions = 0; // Counter untuk pertanyaan yang telah dijawab
+
+        function checkAnswer(button, status) {
+            // Nonaktifkan semua opsi untuk pertanyaan saat jawaban dipilih
+            const options = button.parentElement.querySelectorAll('.quiz-option');
+            options.forEach((option) => {
+                option.disabled = true;
+                option.classList.add(option === button ? status : 'disabled');
+            });
+
+            // Tambahkan skor jika jawaban benar
+            if (status === 'correct') {
+                score++;
+                button.textContent = "Correct!";
+                button.classList.add('correct');
+            } else {
+                button.textContent = "Wrong!";
+                button.classList.add('wrong');
+            }
+
+            // Tambahkan ke counter pertanyaan yang dijawab
+            answeredQuestions++;
+
+            // Periksa apakah semua pertanyaan telah dijawab
+            if (answeredQuestions === totalQuestions) {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            // Tampilkan skor akhir
+            const resultDiv = document.getElementById('quiz-result');
+            const scoreSpan = document.getElementById('score');
+            scoreSpan.textContent = score;
+            resultDiv.style.display = 'block';
+        }
+        </script> 
 </body>
 </html>
