@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="https://r.mobirisesite.com/905761/assets/images/photo-1497942304796-b8bc2cc898f3.jpeg" type="image/x-icon">
     <meta name="description" content="Explore the fascinating history of heroes, their legendary tales, and the impact they have had on society throughout the ages.">
 
-    <title>Ki Hajar Dewantara</title>
+    <title>Culture Places</title>
 
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1731811735194">
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/bootstrap/css/bootstrap.min.css?rnd=1731811735194">
@@ -21,315 +21,1251 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/css/mbr-additional.css?rnd=1731811735194" type="text/css">
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+/* Places to Visit Section */
+.places-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.places-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.place-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.place-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.place-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover .place-info {
+    transform: translateY(0);
+}
+
+.place-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.place-info p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #ffcc00;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+    background: #e6b800;
+    color: white;
+}
+
+/* Bali Section Styling */
+.bali-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    margin: 2rem 0;
+}
+
+.bali-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.bali-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bali-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+.bali-description {
+    text-align: left;
+    color: #333;
+    padding: 0 1rem;
+}
+
+.bali-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e06aa1;
+    margin-bottom: 1rem;
+}
+
+.bali-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-bali {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #e06aa1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-bali:hover {
+    background-color: #e67e00;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .bali-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .bali-description {
+        padding: 0;
+    }
+
+    .bali-image .main-image {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Raja Ampat Section Styling */
+.raja-ampat-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f3f9ff;
+    margin: 2rem 0;
+}
+
+.raja-ampat-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.raja-ampat-description {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.raja-ampat-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #546068;
+    margin-bottom: 1rem;
+}
+
+.raja-ampat-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #005fa3;
+}
+
+.raja-ampat-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.raja-ampat-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .raja-ampat-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .raja-ampat-description {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Borobudur Section Styling */
+.borobudur-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+    margin: 2rem 0;
+}
+
+.borobudur-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.borobudur-description {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.borobudur-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8a4d17;
+    margin-bottom: 1rem;
+}
+
+.borobudur-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-borobudur {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #8a4d17;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-borobudur:hover {
+    background-color: #6e3911;
+}
+
+.borobudur-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.borobudur-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .borobudur-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .borobudur-description {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Raja Ampat Section Styling */
+.raja-ampat-section-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f3f9ff;
+    margin: 2rem 0;
+}
+
+.raja-ampat-container-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.raja-ampat-description-1 {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.raja-ampat-title-1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #216d38;
+    margin-bottom: 1rem;
+}
+
+.raja-ampat-text-1 {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-1 {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #216d38;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-1:hover {
+    background-color: #4f0909;
+}
+
+.raja-ampat-image-1 .main-image-1 {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.raja-ampat-image-1 .main-image-1:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .raja-ampat-container-1 {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .raja-ampat-description-1 {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Panel Styling */
+.panel-body {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.raja-ampat-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Styling untuk Destination Card */
+.destination {
+    background: #fff;
+    border-radius: 15px; /* Membulatkan sudut kartu */
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Shadow lebih lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek animasi */
+    display: flex;
+    flex-direction: column; /* Layout vertikal */
+}
+
+.destination:hover {
+    transform: scale(1.05); /* Efek zoom pada kartu */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+/* Gambar Destination */
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9; /* Ukuran gambar seragam */
+    object-fit: cover; /* Pastikan gambar memenuhi elemen */
+    transition: transform 0.3s ease; /* Animasi zoom saat hover */
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1); /* Zoom-in pada gambar saat hover */
+}
+
+/* Judul Destination */
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin: 0.8rem 1rem 0;
+    text-align: center; /* Pusatkan teks */
+}
+
+/* Deskripsi Destination */
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify; /* Rata kanan-kiri untuk tampilan rapi */
+    flex-grow: 1; /* Pastikan teks memenuhi ruang yang tersedia */
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .raja-ampat-destinations {
+        grid-template-columns: 1fr; /* Grid menjadi satu kolom di layar kecil */
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.bali-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.destination {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1);
+}
+
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin: 0.8rem 1rem 0;
+    text-align: center;
+}
+
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .bali-destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.borobudur-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.destination {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1);
+}
+
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #8a4d17; /* Warna cokelat untuk nuansa budaya */
+    margin: 0.8rem 1rem 0;
+    text-align: center;
+}
+
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .borobudur-destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+    
+.quiz-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centers the quiz items horizontally */
+}
+
+.quiz-item {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px; /* Set width to match the image width */
+    height: auto; /* Allow the height to adjust based on content */
+    display: inline-block; /* Ensures the box adjusts to the content */
+}
+
+.quiz-image {
+    width: 100%; /* Makes the image fill the width of the container */
+    height: 300px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio while covering the area */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.quiz-question {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%; /* Ensures buttons stretch to fit the container */
+}
+
+.quiz-option {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-option:hover {
+    background-color: #ddd;
+}
+
+.quiz-option:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.quiz-result {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* General Styles */
+#how-to-cook {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section Title */
+#how-to-cook .mbr-section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#how-to-cook .mbr-fonts-style {
+    color: #555;
+}
+
+/* Recipe Cards */
+.recipe-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card .card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.recipe-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.recipe-card .card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.recipe-card .btn {
+    background-color: #ff6600;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.recipe-card .btn:hover {
+    background-color: #e65c00;
+}
+
+/* Accordion Styles */
+#recipe-details .card {
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-details .card-header {
+    background-color: #ff6600;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#recipe-details .panel-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#recipe-details .panel-title .mbr-iconfont {
+    float: right;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+#recipe-details .panel-title.collapsed .mbr-iconfont {
+    transform: rotate(180deg);
+}
+
+#recipe-details .panel-body {
+    background-color: white;
+    padding: 20px;
+    color: #555;
+    border-top: 1px solid #ff6600;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #how-to-cook .mbr-section-title {
+        font-size: 2rem;
+    }
+
+    .recipe-card img {
+        height: 150px;
+    }
+
+    .recipe-card .card-title {
+        font-size: 1.2rem;
+    }
+
+    .recipe-card .card-text {
+        font-size: 0.9rem;
+    }
+
+    .recipe-card .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+
+    </style>
 </head>
 <body>
     <!-- Header Menu -->
     <iframe src="header_culture_page.html"></iframe>
 
     <!-- Video and Hero's Name -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=fj-BcPK90f0" id="video-and-name">
+    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://youtu.be/XrdVOE-WR9o?si=8-FdpfW2KCju1RA9" id="video-and-name">
         <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
         <div class="container-fluid">
             <div class="row">
             <div class="content-wrap col-12 col-md-12">
                 <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-                    <strong>Ki Hajar Dewantara</strong>
+                    <strong>Indonesian Cuisines</strong>
                 </h1>
-                <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">The Indonesian Hero of Education</p>
-                <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#running-text">Explore Now</a></div>
+                <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Discover rich flavors, authentic recipes, and the culinary heritage of Indonesia.</p>
+                <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#places">Explore Now</a></div>
             </div>
             </div>
         </div>
     </section>
 
-    <!-- Running Text -->
-    <section data-bs-version="5.1" class="gallery10 cid-uuiqO6YB8v" id="running-text">
-        <div class="container-fluid">
-            <div class="loop-container">
-                <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
-                <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero's Image and Basic Profile -->
-    <section data-bs-version="5.1" class="header12 cid-uuiqO76SyA" id="basic-profile">
-        <div class="text-center container">
-            <div class="row mb-4 justify-content-center">
-                <div class="col-12 col-md-4">
-                    <img src="https://r.mobirisesite.com/905761/assets/images/photo-1469388062863-8702b8cbe-h_m3k66fsh.jpg" alt="">
+    <!-- Places to Visit Section -->
+    <section id="places" class="places-section">
+        <div class="places-grid">
+            <!-- Card 1: Dayak -->
+            <div class="place-card">
+                <img src="https://poshjournal.com/wp-content/uploads/2021/03/soto-ayam-recipe-16.jpg" alt="Bali">
+                <div class="place-info">
+                    <h3>Soto Ayam</h3>
+                    <p>Aromatic chicken soup with turmeric broth.</p>
+                    <a href="#basic-profile" class="btn-learn-more">Learn More</a>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12 content-head">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
-                        <strong>Ki Hajar Dewantara</strong>
-                    </h1>
-                    <p class="mbr-text mbr-fonts-style mb-4 display-7">Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani</p>
-                    <div class="mbr-section-btn mt-4">
-                        <a class="btn btn-primary display-7" href="#about-the-hero">Get Started</a>
-                    </div>
+
+            <!-- Card 2: Raja Ampat -->
+            <div class="place-card">
+                <img src="https://akcdn.detik.net.id/visual/2021/12/27/siomay-1_11.jpeg?w=720&q=90" alt="Raja Ampat">
+                <div class="place-info">
+                    <h3>Siomay</h3>
+                    <p>Steamed fish dumplings with peanut sauce.</p>
+                    <a href="#raja-ampat-profile" class="btn-learn-more">Learn More</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- About The Hero -->
-    <section data-bs-version="5.1" class="list1 cid-uuiqO7eKKM" id="about-the-hero">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-12 col-lg-10 m-auto">
-                    <div class="content">
-                        <div class="row justify-content-center mb-5">
-                            <div class="col-12 content-head">
-                                <div class="mbr-section-head">
-                                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                                        <strong>About Ki Hajar Dewantara</strong></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="bootstrap-accordion_17" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false" aria-controls="collapse1">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 1?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 1.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 2?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_17" aria-expanded="false" aria-controls="collapse3">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 3?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse3_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 3.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_17" aria-expanded="false" aria-controls="collapse4">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 4?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse4_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 4.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_17" aria-expanded="false" aria-controls="collapse5">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 5?</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse5_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 5.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+            <!-- Card 3: Borobudur -->
+            <div class="place-card">
+                <img src="https://tehmasbroo.com/wp-content/uploads/2023/12/IMG_0886.webp" alt="Borobudur">
+                <div class="place-info">
+                    <h3>Es Teh</h3>
+                    <p>Refreshing iced tea, plain or sweetened.</p>
+                    <a href="#borobudur-profile" class="btn-learn-more">Learn More</a>
+                </div>
+            </div>
+
+             <!-- Card 4: Palembang -->
+             <div class="place-card">
+                <img src="https://cdn.idntimes.com/content-images/community/2024/07/img-20240709-wa0000-e19c76cf1b28908665001625bb727ae6-40b3450b6cb5857e733d5eec2337094b.jpg" alt="Raja Ampat">
+                <div class="place-info">
+                    <h3>Es Timun Selasih</h3>
+                    <p>Cucumber drink with basil seeds, sweet.</p>
+                    <a href="#raja-ampat-profile-1" class="btn-learn-more">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section data-bs-version="5.1" class="gallery4 cid-uuiqO7qVLF" id="gallery">
-        <div class="container-fluid gallery-wrapper">
-            <div class="row justify-content-center">
-                <div class="col-12 content-head">
-                </div>
+    <section id="basic-profile" class="bali-section">
+        <div class="bali-container">
+            <!-- Foto Utama -->
+            <div class="bali-image">
+                <img src="https://asset.kompas.com/crops/Bs4oWJdV_9BRvZn1lZQBRWwX5l0=/0x0:1000x667/1200x800/data/photo/2024/01/16/65a5db1f6671b.jpg" alt="Bali" class="main-image">
             </div>
-            <div class="grid-container">
-                <div class="grid-container-1" style="transform: translate3d(-200px, 0px, 0px);">
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1463595663992-cb0dc1d64-h_m3k6qx64.jpg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1574687357639-60df588aa-h_m3k6m9ux.jpg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1479888230021-c24f136d8-h_m3k6n0c9.jpg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1530819568329-97653eafb-h_m3k6pppz.jpg" alt="">
-                    </div>
-                </div>
-                <div class="grid-container-2" style="transform: translate3d(-70px, 0px, 0px);">
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1484887603430-371459454eed.jpeg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488693161025-5f967b74de89.jpeg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1496293455970-f8581aae0e3b.jpeg" alt="">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://r.mobirisesite.com/905761/assets/images/photo-1532387482281-c56ef57652ec.jpeg" alt="">
-                    </div>
-                </div>
+            <!-- Penjelasan Umum -->
+            <div class="bali-description">
+                <h1 class="bali-title">
+                    <strong>Soto Ayam</strong>
+                </h1>
+                <p class="bali-text">
+                    Soto Ayam is a beloved Indonesian chicken soup, celebrated for its bright yellow, turmeric-infused broth and aromatic spices. This flavorful dish combines tender shredded chicken, vermicelli or glass noodles, boiled eggs, bean sprouts, and crispy fried shallots. It is garnished with fresh herbs like celery and lime leaves, which enhance its rich aroma and taste. The addition of lime juice and sambal (chili paste) allows each serving to be customized to personal preferences, creating a balance of savory, tangy, and spicy flavors.
+                </p>
+                <p class="bali-text">
+                    Typically enjoyed with a side of steamed rice or compressed rice cakes (lontong), Soto Ayam is a staple in Indonesian households and street food culture. It is not just a dish but a culinary representation of Indonesia’s diverse flavors and traditions. Whether served during family gatherings, festivals, or casual meals, Soto Ayam offers comfort and a taste of Indonesia's vibrant culinary heritage.                </p>
+                <a href="#bootstrap-accordion_17" class="btn-explore-bali">Discover More</a>
             </div>
         </div>
     </section>
 
-    <!-- Hero's Story -->
-    <section data-bs-version="5.1" class="article9 cid-uuiqO7HdB8" id="story">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="card col-md-12 col-lg-10">
-                    <div class="card-wrapper">
-                        <div class="card-content-text">
-                            <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
-                                <strong>Unveiling Heroic Legends</strong>
-                            </h3>
-                            <div class="row card-box align-left">
-                                <div class="item features-without-image col-12">
-                                    <div class="item-wrapper">
-                                        <p class="mbr-text mbr-fonts-style display-7">Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story.</p>
-                                    </div>
+    <section id="raja-ampat-profile" class="raja-ampat-section">
+        <div class="raja-ampat-container">
+            <!-- Penjelasan Umum -->
+            <div class="raja-ampat-description">
+                <h1 class="raja-ampat-title">
+                    <strong>Siomay</strong>
+                </h1>
+                <p class="raja-ampat-text">
+                    Siomay is a popular Indonesian street food inspired by Chinese dim sum. It consists of steamed fish dumplings made with a mixture of fish paste, tapioca, and spices, often accompanied by boiled eggs, tofu, potatoes, and cabbage. The dish is traditionally served with a rich peanut sauce, sweet soy sauce (kecap manis), and a squeeze of lime for added zest.
+                </p>
+                <p class="raja-ampat-text">
+                    This flavorful and versatile dish is commonly enjoyed as a light meal or snack throughout Indonesia. Siomay is a testament to Indonesia’s ability to blend culinary influences into something uniquely its own, offering a delicious, savory bite that is both satisfying and packed with local flavors.
+                </p>       
+                        <a href="#bootstrap-accordion_17" class="btn-explore">Discover More</a>
+            </div>
+            <!-- Foto Utama -->
+            <div class="raja-ampat-image">
+                <img src="https://cdn0-production-images-kly.akamaized.net/XS3n0H7cxlU2uA5BLbbbt5UTGnc=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2834715/original/082188900_1561183059-shutterstock_1134726890.jpg" alt="Raja Ampat" class="main-image">
+            </div>
+        </div>
+    </section>
+    
+    <section id="borobudur-profile" class="borobudur-section">
+        <div class="borobudur-container">
+            <!-- Foto Utama -->
+            <div class="borobudur-image">
+                <img src="https://cdns.klimg.com/mav-prod-resized/0x0/ori/newsOg/2024/6/9/1717922018125-xz59n.jpeg" alt="Borobudur" class="main-image">
+            </div>
+            <!-- Penjelasan Umum -->
+            <div class="borobudur-description">
+                <h1 class="borobudur-title">
+                    <strong>Es Teh</strong>
+                </h1>
+                <p class="borobudur-text">
+                    Es Teh, or iced tea, is a refreshing and widely loved beverage in Indonesia. Made from brewed black tea, it is typically served over ice and can be enjoyed plain or sweetened with sugar. Es Teh is a staple drink found everywhere, from street vendors to high-end restaurants, offering a cooling escape in the country’s tropical climate.                </p>
+                <p class="borobudur-text">
+                    This simple yet versatile drink complements a variety of Indonesian dishes, balancing spicy and savory flavors with its crisp and light taste. Whether served at family gatherings, casual meals, or traditional celebrations, Es Teh remains a timeless favorite, symbolizing warmth and hospitality.                </p>
+                <a href="#bootstrap-accordion_17" class="btn-explore-borobudur">Discover More</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="raja-ampat-profile-1" class="raja-ampat-section-1">
+        <div class="raja-ampat-container-1">
+            <!-- Penjelasan Umum -->
+            <div class="raja-ampat-description-1">
+                <h1 class="raja-ampat-title-1">
+                    <strong>Es Timun Selasih</strong>
+                </h1>
+                <p class="raja-ampat-text-1">
+                    Es Timun Selasih is a refreshing Indonesian drink made with shredded cucumber, basil seeds (selasih), simple syrup, and chilled water or ice. Often enhanced with a splash of lime or lemon juice, this drink offers a perfect balance of sweetness and tanginess, making it an ideal thirst-quencher in the tropical heat.
+                </p>
+                <p class="raja-ampat-text-1">
+                    Loved for its unique combination of textures, Es Timun Selasih combines the crunchiness of cucumber with the jelly-like consistency of soaked basil seeds. Commonly served at traditional events or as a cooling treat during Ramadan, this drink showcases Indonesia’s creativity in blending simple ingredients into delightful and refreshing beverages.
+                </p>            
+                        <a href="#bootstrap-accordion_17" class="btn-explore-1">Discover More</a>
+            </div>
+            <!-- Foto Utama -->
+            <div class="raja-ampat-image-1">
+                <img src="https://cdn0-production-images-kly.akamaized.net/odLQmydgPg3-SRZY6tHyw3bU_Nw=/1x78:1000x641/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4365048/original/059747100_1679296622-shutterstock_2003551073.jpg" alt="Raja Ampat" class="main-image-1">
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Cook That -->
+<section data-bs-version="5.1" class="list1 cid-uuiqO7eKKM" id="how-to-cook">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12 col-lg-10 m-auto">
+                <div class="content">
+                    <!-- Section Title -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-12 content-head">
+                            <div class="mbr-section-head">
+                                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                                    <strong>How to Cook The Cuisines</strong>
+                                </h4>
+                                <p class="mbr-fonts-style align-center mt-3 display-6">
+                                    Master the art of cooking with these step-by-step recipes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe Cards -->
+                    <div class="row g-4">
+                        <!-- Recipe 1 -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card recipe-card">
+                                <img src="https://asset.kompas.com/crops/yc5vBBn_kny5uxIg5QNuj7Qzx6c=/0x0:1000x667/1200x800/data/photo/2024/03/21/65fbab7732136.jpeg" class="card-img-top" alt="Soto Ayam">
+                                <div class="card-body">
+                                    <h5 class="card-title">Soto Ayam</h5>
+                                    <p class="card-text">Learn to make Indonesia's classic turmeric chicken soup with simple steps.</p>
+                                    <a href="#sotoAyamRecipe" class="btn btn-primary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sotoAyamRecipe">View Recipe</a>
                                 </div>
-                                <div class="item features-without-image col-12">
-                                    <div class="item-wrapper">
-                                        <p class="mbr-text mbr-fonts-style display-7">Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story.</p>
-                                    </div>
+                            </div>
+                        </div>
+                        <!-- Recipe 2 -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card recipe-card">
+                                <img src="images/siomay.jpg" class="card-img-top" alt="Siomay">
+                                <div class="card-body">
+                                    <h5 class="card-title">Siomay</h5>
+                                    <p class="card-text">Discover how to make this steamed fish dumpling with peanut sauce.</p>
+                                    <a href="#siomayRecipe" class="btn btn-primary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="siomayRecipe">View Recipe</a>
                                 </div>
-                                <div class="item features-without-image col-12">
-                                    <div class="item-wrapper">
-                                        <p class="mbr-text mbr-fonts-style display-7">Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story.</p>
-                                    </div>
+                            </div>
+                        </div>
+                        <!-- Recipe 3 -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card recipe-card">
+                                <img src="https://nilaigizi.com/assets/images/produk/produk_1578041377.jpg" class="card-img-top" alt="Nasi Goreng">
+                                <div class="card-body">
+                                    <h5 class="card-title">Es Teh</h5>
+                                    <p class="card-text">Enjoy Indonesia's refreshing iced tea, perfect for any meal or a tropical treat.</p>
+                                    <a href="#esTehRecipe" class="btn btn-primary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="nasiGorengRecipe">View Recipe</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="image-wrapper d-flex justify-content-center mt-3">
-                            <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488841714725-bb4c32d1a-h_m3k6rpu2.jpg" alt="">
+                    </div>
+
+                    <!-- Recipe 4 -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card recipe-card">
+                            <img src="https://assets.promediateknologi.id/crop/32x560:677x1040/750x500/webp/photo/2023/04/06/Screenshot_2023-04-06-20-48-11-36_40deb401b9ffe8e1df2f1cc5ba480b12-3444317504.jpg" class="card-img-top" alt="Nasi Goreng">
+                            <div class="card-body">
+                                <h5 class="card-title">Es Timun Selasih</h5>
+                                <p class="card-text">Savor Indonesia's cooling cucumber and basil seed drink, a perfect tropical refreshment.</p>
+                                <a href="#esTimunSelasihRecipe" class="btn btn-primary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="nasiGorengRecipe">View Recipe</a>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                    <!-- Recipe Details -->
+                    <div id="recipe-details" class="accordion mt-5">
+                        <!-- Soto Ayam Recipe -->
+<div class="accordion-item">
+    <h6 class="accordion-header" id="headingSotoAyam">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sotoAyamRecipe" aria-expanded="false" aria-controls="sotoAyamRecipe">
+            Soto Ayam Recipe
+        </button>
+    </h6>
+    <div id="sotoAyamRecipe" class="accordion-collapse collapse" aria-labelledby="headingSotoAyam" data-bs-parent="#recipe-details">
+        <div class="accordion-body">
+            <strong>Ingredients:</strong>
+            <ul>
+                <li>1 whole chicken (cut into pieces)</li>
+                <li>1 tablespoon turmeric powder (or fresh turmeric)</li>
+                <li>5 cloves garlic (minced)</li>
+                <li>4 shallots (minced)</li>
+                <li>2 stalks lemongrass (bruised)</li>
+                <li>3-4 kaffir lime leaves</li>
+                <li>1 tablespoon ginger (minced)</li>
+                <li>200g vermicelli noodles (or rice noodles)</li>
+                <li>2 boiled eggs (sliced)</li>
+                <li>2 boiled potatoes (optional, cubed)</li>
+                <li>Salt and pepper to taste</li>
+                <li>1 tablespoon vegetable oil</li>
+                <li>1 liter chicken broth (or water)</li>
+                <li>Fresh cilantro leaves (for garnish)</li>
+                <li>Fried shallots (for garnish)</li>
+                <li>Lime wedges (for serving)</li>
+                <li>Soy sauce or sambal (optional, for serving)</li>
+            </ul>
+            
+            <strong>Steps:</strong>
+            <ol>
+                <li><strong>Prepare the chicken:</strong> Boil the chicken in a large pot of water until cooked, around 30-40 minutes. Once done, remove the chicken, set aside to cool, then shred the meat.</li>
+                <li><strong>Prepare the broth:</strong> In another pot, heat the vegetable oil and sauté minced garlic, shallots, turmeric, ginger, and lemongrass until fragrant. Add the boiled chicken stock (or water) to the pot, and stir. Let it simmer for 10-15 minutes to infuse the flavors. Add the lime leaves and salt to taste.</li>
+                <li><strong>Prepare the noodles:</strong> Boil the vermicelli noodles according to the package instructions. Drain and divide into serving bowls.</li>
+                <li><strong>Assemble the Soto:</strong> Add the shredded chicken, boiled potatoes (optional), and boiled eggs to each bowl. Pour the hot broth over the noodles and toppings.</li>
+                <li><strong>Garnish and serve:</strong> Garnish with fresh cilantro, fried shallots, and a squeeze of lime juice. Serve with lime wedges, soy sauce, and sambal for extra flavor.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+                        <!-- Siomay Recipe -->
+<div class="accordion-item">
+    <h6 class="accordion-header" id="headingSiomay">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siomayRecipe" aria-expanded="false" aria-controls="siomayRecipe">
+            Siomay Recipe
+        </button>
+    </h6>
+    <div id="siomayRecipe" class="accordion-collapse collapse" aria-labelledby="headingSiomay" data-bs-parent="#recipe-details">
+        <div class="accordion-body">
+            <strong>Ingredients:</strong>
+            <ul>
+                <li>500g fish fillet (commonly tilapia, mackerel, or chicken)</li>
+                <li>100g tapioca flour</li>
+                <li>1 egg</li>
+                <li>1 tablespoon garlic (minced)</li>
+                <li>1 tablespoon shallots (minced)</li>
+                <li>1 tablespoon soy sauce</li>
+                <li>1 teaspoon sugar</li>
+                <li>Salt and pepper to taste</li>
+                <li>200g tofu (cut into cubes)</li>
+                <li>200g boiled potatoes (sliced)</li>
+                <li>3-4 boiled eggs (peeled and halved)</li>
+                <li>200g cabbage leaves (blanched)</li>
+            </ul>
+            
+            <strong>Peanut Sauce (for serving):</strong>
+            <ul>
+                <li>200g roasted peanuts (ground)</li>
+                <li>3 tablespoons sweet soy sauce</li>
+                <li>1-2 cloves garlic</li>
+                <li>1 tablespoon chili paste (optional)</li>
+                <li>Water to adjust consistency</li>
+            </ul>
+            
+            <strong>Steps:</strong>
+            <ol>
+                <li><strong>Prepare the fish paste:</strong> Blend the fish fillet in a food processor with tapioca flour, egg, garlic, shallots, soy sauce, sugar, salt, and pepper. Blend until the mixture is smooth and elastic.</li>
+                <li><strong>Prepare the filling:</strong> Shape the fish paste into small dumplings, about the size of a golf ball. You can stuff the dumplings into cabbage leaves, tofu cubes, and place a half-boiled egg inside each.</li>
+                <li><strong>Steam the dumplings:</strong> Arrange the prepared siomay (dumplings) in a steamer basket and steam for 20-30 minutes, or until they are fully cooked.</li>
+                <li><strong>Prepare the peanut sauce:</strong> In a blender, combine the ground roasted peanuts, sweet soy sauce, garlic, chili paste (optional), and a little water. Blend until smooth. Adjust with more water for your desired consistency.</li>
+                <li><strong>Assemble and serve:</strong> Once the siomay is done, serve it on a platter with boiled potatoes, tofu, eggs, and cabbage. Drizzle with peanut sauce and garnish with fried shallots and a squeeze of lime.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+                        <!-- Es Teh Recipe -->
+<div class="accordion-item">
+    <h6 class="accordion-header" id="headingEsTeh">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#esTehRecipe" aria-expanded="false" aria-controls="esTehRecipe">
+            Es Teh Recipe
+        </button>
+    </h6>
+    <div id="esTehRecipe" class="accordion-collapse collapse" aria-labelledby="headingEsTeh" data-bs-parent="#recipe-details">
+        <div class="accordion-body">
+            <strong>Ingredients:</strong>
+            <ul>
+                <li>2 bags of black tea (or 2 tablespoons loose leaf tea)</li>
+                <li>500ml hot water</li>
+                <li>3-4 tablespoons sugar (adjust to taste)</li>
+                <li>Ice cubes</li>
+                <li>Lemon wedges (optional, for garnish)</li>
+                <li>Fresh mint leaves (optional, for garnish)</li>
+            </ul>
+
+            <strong>Steps:</strong>
+            <ol>
+                <li><strong>Prepare the tea:</strong> Boil 500ml of water and pour it over the tea bags (or loose leaf tea) in a teapot or heatproof container. Let it steep for 3-5 minutes, depending on how strong you want the tea.</li>
+                <li><strong>Sweeten the tea:</strong> Remove the tea bags or strain the tea leaves, then stir in sugar while the tea is still hot. Adjust the sugar according to your sweetness preference.</li>
+                <li><strong>Chill the tea:</strong> Let the tea cool down to room temperature, then place it in the refrigerator to chill for at least 30 minutes.</li>
+                <li><strong>Serve:</strong> Fill a glass with ice cubes and pour the chilled tea over the ice.</li>
+                <li><strong>Garnish and serve:</strong> Optionally, garnish with a slice of lemon and a sprig of fresh mint for extra flavor. Serve cold and enjoy!</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- Es Timun Selasih Recipe -->
+<div class="accordion-item">
+    <h6 class="accordion-header" id="headingEsTimunSelasih">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#esTimunSelasihRecipe" aria-expanded="false" aria-controls="esTimunSelasihRecipe">
+            Es Timun Selasih Recipe
+        </button>
+    </h6>
+    <div id="esTimunSelasihRecipe" class="accordion-collapse collapse" aria-labelledby="headingEsTimunSelasih" data-bs-parent="#recipe-details">
+        <div class="accordion-body">
+            <strong>Ingredients:</strong>
+            <ul>
+                <li>1 medium cucumber (peeled and julienned or diced)</li>
+                <li>2 tablespoons basil seeds (selasih seeds)</li>
+                <li>500ml water</li>
+                <li>2 tablespoons sugar (adjust to taste)</li>
+                <li>1 tablespoon lemon juice (optional, for added tang)</li>
+                <li>Ice cubes</li>
+                <li>Fresh mint leaves (optional, for garnish)</li>
+                <li>2-3 pandan leaves (optional, for fragrance)</li>
+            </ul>
+
+            <strong>Steps:</strong>
+            <ol>
+                <li><strong>Prepare the basil seeds:</strong> Soak the basil seeds in water for about 10 minutes, or until they expand and become gelatinous.</li>
+                <li><strong>Prepare the cucumber:</strong> Peel the cucumber, then julienne or dice it into small pieces. Set aside.</li>
+                <li><strong>Make the sweet syrup:</strong> In a small saucepan, heat 500ml of water with sugar until the sugar dissolves completely. Add pandan leaves if using, and let it simmer for 5 minutes for extra fragrance. Remove pandan leaves and let the syrup cool down.</li>
+                <li><strong>Assemble the drink:</strong> In a glass, combine the prepared cucumber, soaked basil seeds, and sweet syrup. Add lemon juice if you prefer a tangy taste.</li>
+                <li><strong>Serve:</strong> Add ice cubes to the glass and garnish with fresh mint leaves if desired. Stir well and enjoy the refreshing Es Timun Selasih!</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+<section id="quiz" class="quiz-section">
+    <div class="container">
+        <h2 class="text-center">Guess the Cuisine</h2>
+        <p class="text-center-can">Can you identify these iconic Indonesian dishes and ingredients?</p>
+        <div class="quiz-container">
+            <!-- Pertanyaan 1 -->
+            <div class="quiz-item">
+                <img src="https://www.thehealthybelly.co/storage/product/media_1617781998_0.jpeg" alt="Soto Ayam" class="quiz-image">
+                <p class="quiz-question">What is the main ingredient of Soto Ayam?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Chicken</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Beef</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Fish</button>
+                </div>
+            </div>
+            <!-- Pertanyaan 2 -->
+            <div class="quiz-item">
+                <img src="https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/02/12/siomay-bandung-1jpg-20210212032951.jpg" alt="Siomay" class="quiz-image">
+                <p class="quiz-question">What is the primary filling of Siomay?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Fish</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Chicken</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Pork</button>
+                </div>
+            </div>
+            <!-- Pertanyaan 3 -->
+            <div class="quiz-item">
+                <img src="https://assets.promediateknologi.id/crop/0x64:879x695/750x500/webp/photo/2023/06/02/Es-timun-serut-2518144074.jpeg" alt="Es Timun Selasih" class="quiz-image">
+                <p class="quiz-question">Which seed is used in Es Timun Selasih?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Basil seeds (Selasih)</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Chia seeds</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Flax seeds</button>
+                </div>
+            </div>
+            <!-- Pertanyaan 4 -->
+            <div class="quiz-item">
+                <img src="https://asset.kompas.com/crops/Bs4oWJdV_9BRvZn1lZQBRWwX5l0=/0x0:1000x667/1200x800/data/photo/2024/01/16/65a5db1f6671b.jpg" alt="Sambal" class="quiz-image">
+                <p class="quiz-question">Which Indonesian dish is often served with Sambal?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Soto Ayam</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Bakso</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Nasi Goreng</button>
+                </div>
+            </div>
+            <!-- Pertanyaan 5 -->
+            <div class="quiz-item">
+                <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gado-gado-salad-876c31a.jpg" alt="Gado Gado" class="quiz-image">
+                <p class="quiz-question">What type of dish is Gado-Gado?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="checkAnswer(this, 'correct')">Salad with peanut sauce</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Fried rice</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, 'wrong')">Soup with noodles</button>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Parallax -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO8agKr mbr-fullscreen mbr-parallax-background" id="parallax-1">
-        <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
-        <div class="container-fluid">
-            <div class="row">
-            </div>
+        <!-- Placeholder untuk hasil -->
+        <div class="quiz-result" id="quiz-result">
+            <p>You got <span id="score">0</span> out of 5 questions correct!</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Parallax -->
-    <section data-bs-version="5.1" class="image02 cid-uuiqO8lxNq mbr-fullscreen mbr-parallax-background" id="parallax-2">
-        <div class="container">
-            <div class="row"></div>
-        </div>
-    </section>
-
-    <!-- Get Inspired by The Hero -->
-    <section data-bs-version="5.1" class="people05 cid-uuiqO7TL68" id="get-inspired">
-        <div class="container">
-            <div class="row mb-5 justify-content-center">
-                <div class="col-12 mb-0 content-head">
-                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                        <strong>Get Inspired by Ki Hajar Dewantara</strong>
-                    </h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="item features-without-image col-12 col-md-6 col-lg-4 active">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 1.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1679746584014-fb31d4eb0a5e.jpeg" alt="" data-slide-to="0" data-bs-slide-to="0">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 2.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1589571894960-20bbe2828d0a.jpeg" data-slide-to="1" data-bs-slide-to="1" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 3.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1626899798511-c3eaacb02846.jpeg" data-slide-to="2" data-bs-slide-to="2" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 4.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1545803928-04e3f4cdd4ed.jpeg" data-slide-to="4" data-bs-slide-to="4" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 5.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1497485692312-a26e1cc30f1d.jpeg" data-slide-to="6" data-bs-slide-to="6" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item features-without-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="card-box align-left">
-                            <p class="card-text mbr-fonts-style display-7">Inspiration 6.</p>
-                            <div class="img-wrapper mt-4 mb-3">
-                                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1692558588242-57cec1e32bba.jpeg" data-slide-to="7" data-bs-slide-to="7" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
+    
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
 
@@ -343,5 +1279,25 @@
     <script src="https://r.mobirisesite.com/905761/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1731811735195"></script>
     <script src="https://r.mobirisesite.com/905761/assets/scrollgallery/scroll-gallery.js?rnd=1731811735195"></script>
     <script src="https://r.mobirisesite.com/905761/assets/theme/js/script.js?rnd=1731811735195"></script>
+
+    <script>
+        let score = 0;
+
+function checkAnswer(button, status) {
+    if (status === 'correct') {
+        button.style.backgroundColor = 'green';
+        score++;
+    } else {
+        button.style.backgroundColor = 'red';
+    }
+    // Disable all buttons in the current question
+    const options = button.parentElement.querySelectorAll('.quiz-option');
+    options.forEach(opt => opt.disabled = true);
+
+    // Update score
+    document.getElementById('score').innerText = score;
+}
+
+        </script> 
 </body>
 </html>
