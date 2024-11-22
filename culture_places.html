@@ -21,6 +21,521 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/css/mbr-additional.css?rnd=1731811735194" type="text/css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+/* Places to Visit Section */
+.places-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.places-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.place-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.place-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.place-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover .place-info {
+    transform: translateY(0);
+}
+
+.place-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.place-info p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #ffcc00;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+    background: #e6b800;
+    color: white;
+}
+
+/* Bali Section Styling */
+.bali-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    margin: 2rem 0;
+}
+
+.bali-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.bali-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bali-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+.bali-description {
+    text-align: left;
+    color: #333;
+    padding: 0 1rem;
+}
+
+.bali-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e67e00;
+    margin-bottom: 1rem;
+}
+
+.bali-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-bali {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff9800;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-bali:hover {
+    background-color: #e67e00;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .bali-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .bali-description {
+        padding: 0;
+    }
+
+    .bali-image .main-image {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Raja Ampat Section Styling */
+.raja-ampat-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f3f9ff;
+    margin: 2rem 0;
+}
+
+.raja-ampat-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.raja-ampat-description {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.raja-ampat-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin-bottom: 1rem;
+}
+
+.raja-ampat-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #005fa3;
+}
+
+.raja-ampat-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.raja-ampat-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .raja-ampat-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .raja-ampat-description {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Borobudur Section Styling */
+.borobudur-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+    margin: 2rem 0;
+}
+
+.borobudur-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.borobudur-description {
+    text-align: left;
+    color: #333;
+    padding-right: 1rem;
+}
+
+.borobudur-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8a4d17;
+    margin-bottom: 1rem;
+}
+
+.borobudur-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify; /* Menambahkan properti justify */
+}
+
+.btn-explore-borobudur {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #8a4d17;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore-borobudur:hover {
+    background-color: #6e3911;
+}
+
+.borobudur-image .main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.borobudur-image .main-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .borobudur-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .borobudur-description {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Panel Styling */
+.panel-body {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.raja-ampat-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Styling untuk Destination Card */
+.destination {
+    background: #fff;
+    border-radius: 15px; /* Membulatkan sudut kartu */
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Shadow lebih lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek animasi */
+    display: flex;
+    flex-direction: column; /* Layout vertikal */
+}
+
+.destination:hover {
+    transform: scale(1.05); /* Efek zoom pada kartu */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+/* Gambar Destination */
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9; /* Ukuran gambar seragam */
+    object-fit: cover; /* Pastikan gambar memenuhi elemen */
+    transition: transform 0.3s ease; /* Animasi zoom saat hover */
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1); /* Zoom-in pada gambar saat hover */
+}
+
+/* Judul Destination */
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin: 0.8rem 1rem 0;
+    text-align: center; /* Pusatkan teks */
+}
+
+/* Deskripsi Destination */
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify; /* Rata kanan-kiri untuk tampilan rapi */
+    flex-grow: 1; /* Pastikan teks memenuhi ruang yang tersedia */
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .raja-ampat-destinations {
+        grid-template-columns: 1fr; /* Grid menjadi satu kolom di layar kecil */
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.bali-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.destination {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1);
+}
+
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0077cc;
+    margin: 0.8rem 1rem 0;
+    text-align: center;
+}
+
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .bali-destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.borobudur-destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.destination {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.destination-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination:hover .destination-image {
+    transform: scale(1.1);
+}
+
+.destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #8a4d17; /* Warna cokelat untuk nuansa budaya */
+    margin: 0.8rem 1rem 0;
+    text-align: center;
+}
+
+.destination-text {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .borobudur-destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+    </style>
 </head>
 <body>
     <!-- Header Menu -->
@@ -36,66 +551,117 @@
                     <strong>Places to Visit</strong>
                 </h1>
                 <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Explore Indonesia's stunning beaches, lush jungles, and vibrant culture.</p>
-                <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#running-text">Explore Now</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#places">Explore Now</a></div>
             </div>
             </div>
         </div>
     </section>
 
-    <!-- Hero's Image and Basic Profile -->
-    <section data-bs-version="5.1" class="header12 cid-uuiqO76SyA" id="basic-profile">
-        <div class="text-center container">
-            <div class="row mb-4 justify-content-center">
-                <div class="col-12 col-md-4">
-                    <img src="https://r.mobirisesite.com/905761/assets/images/photo-1469388062863-8702b8cbe-h_m3k66fsh.jpg" alt="">
+    <!-- Places to Visit Section -->
+    <section id="places" class="places-section">
+        <div class="places-grid">
+            <!-- Card 1: Bali -->
+            <div class="place-card">
+                <img src="images/bali.webp" alt="Bali">
+                <div class="place-info">
+                    <h3>Bali</h3>
+                    <p>Land of the Gods and timeless temples.</p>
+                    <a href="#basic-profile" class="btn-learn-more">Learn More</a>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12 content-head">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
-                        <strong>Bali</strong>
-                    </h1>
-                    <p class="mbr-text mbr-fonts-style mb-4 display-7">A tropical haven renowned for its pristine beaches, lush rice terraces, vibrant arts scene, spiritual temples, and world-class hospitality. A perfect destination for relaxation, adventure, and cultural exploration.</p>
+
+            <!-- Card 2: Raja Ampat -->
+            <div class="place-card">
+                <img src="images/raja.jpg" alt="Raja Ampat">
+                <div class="place-info">
+                    <h3>Raja Ampat</h3>
+                    <p>Explore an underwater paradise.</p>
+                    <a href="#raja-ampat-profile" class="btn-learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Borobudur -->
+            <div class="place-card">
+                <img src="images/borobodur.jpg" alt="Borobudur">
+                <div class="place-info">
+                    <h3>Borobudur</h3>
+                    <p>A journey into the ancient world.</p>
+                    <a href="#borobudur-profile" class="btn-learn-more">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- Places to Visit Section -->
-        <section id="places" class="places-section">
-            <h2>Places to Visit</h2>
-            <div class="places-grid">
-                <!-- Card 1: Bali -->
-                <div class="place-card">
-                    <img src="images/bali.webp" alt="Bali">
-                    <div class="place-info">
-                        <h3>Bali</h3>
-                        <p>Land of the Gods and timeless temples.</p>
-                        <a href="learn-more-bali.html" class="btn-learn-more">Learn More</a>
-                    </div>
-                </div>
-    
-                <!-- Card 2: Raja Ampat -->
-                <div class="place-card">
-                    <img src="images/raja.jpg" alt="Raja Ampat">
-                    <div class="place-info">
-                        <h3>Raja Ampat</h3>
-                        <p>Explore an underwater paradise.</p>
-                        <a href="#index.html" class="btn-learn-more">Learn More</a>
-                    </div>
-                </div>
-    
-                <!-- Card 3: Borobudur -->
-                <div class="place-card">
-                    <img src="images/borobodur.jpg" alt="Borobudur">
-                    <div class="place-info">
-                        <h3>Borobudur</h3>
-                        <p>A journey into the ancient world.</p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
-                    </div>
-                </div>
+    <section id="basic-profile" class="bali-section">
+        <div class="bali-container">
+            <!-- Foto Utama -->
+            <div class="bali-image">
+                <img src="images/beach.webp" alt="Bali" class="main-image">
             </div>
-        </section>
+            <!-- Penjelasan Umum -->
+            <div class="bali-description">
+                <h1 class="bali-title">
+                    <strong>Bali - The Island of Gods</strong>
+                </h1>
+                <p class="bali-text">
+                    Bali, a tropical haven, is renowned for its pristine beaches, lush green rice terraces, vibrant arts scene, spiritual temples, and world-class hospitality. A perfect destination for relaxation, adventure, and cultural exploration.
+                </p>
+                <p class="bali-text">
+                    From the iconic Tanah Lot Temple to the serene Ubud Monkey Forest, Bali offers breathtaking landscapes and rich cultural experiences. Whether you’re seeking tranquil retreats or exhilarating adventures, Bali has it all.
+                </p>
+                <a href="#places" class="btn-explore-bali">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="raja-ampat-profile" class="raja-ampat-section">
+        <div class="raja-ampat-container">
+            <!-- Penjelasan Umum -->
+            <div class="raja-ampat-description">
+                <h1 class="raja-ampat-title">
+                    <strong>Raja Ampat - A Paradise Beneath the Waves</strong>
+                </h1>
+                <p class="raja-ampat-text">
+                    Raja Ampat, located in Indonesia's West Papua, is a hidden gem renowned for its vibrant marine biodiversity, crystal-clear waters, and stunning karst islands. Often referred to as the "Amazon of the Ocean," it’s a dream destination for divers and nature enthusiasts alike.
+                </p>
+                <p class="raja-ampat-text">
+                    Explore breathtaking coral reefs, secluded beaches, and rare wildlife both above and beneath the waves. From swimming with manta rays to hiking iconic viewpoints like Piaynemo, Raja Ampat offers unforgettable experiences in one of the world's most pristine environments.
+                </p>
+                <a href="#places" class="btn-explore">Discover More</a>
+            </div>
+            <!-- Foto Utama -->
+            <div class="raja-ampat-image">
+                <img src="images/rajampat.jpg" alt="Raja Ampat" class="main-image">
+            </div>
+        </div>
+    </section>
+    
+    <section id="borobudur-profile" class="borobudur-section">
+        <div class="borobudur-container">
+            <!-- Foto Utama -->
+            <div class="borobudur-image">
+                <img src="images/borobodur1.jpg" alt="Borobudur" class="main-image">
+            </div>
+            <!-- Penjelasan Umum -->
+            <div class="borobudur-description">
+                <h1 class="borobudur-title">
+                    <strong>Borobudur - The Ancient Marvel</strong>
+                </h1>
+                <p class="borobudur-text">
+                    Borobudur, a UNESCO World Heritage Site, is the largest Buddhist temple in the world. Located in Central Java, Indonesia, this ancient wonder is a symbol of Indonesia's rich cultural heritage and architectural brilliance.
+                </p>
+                <p class="borobudur-text">
+                    Built in the 9th century, Borobudur features intricate carvings and breathtaking views of the surrounding mountains and lush landscapes. It’s not just a place of worship but also a cultural masterpiece that tells stories of spirituality and enlightenment.
+                </p>
+                <a href="#places" class="btn-explore-borobudur">Discover More</a>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    
+    
 
     <!-- About The Hero -->
     <section data-bs-version="5.1" class="list1 cid-uuiqO7eKKM" id="about-the-hero">
@@ -107,58 +673,126 @@
                             <div class="col-12 content-head">
                                 <div class="mbr-section-head">
                                     <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                                        <strong>Some Places in Indonesia You Should Know</strong></h4>
+                                        <strong>Some Destinations in Indonesia</strong></h4>
                                 </div>
                             </div>
                         </div>
                         <div id="bootstrap-accordion_17" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
                             <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapse1_17" aria-expanded="false" aria-controls="collapse1">
+                                <div class="card-header" role="tab" id="headingBali">
+                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapseBali" aria-expanded="false" aria-controls="collapseBali">
                                         <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Bali</h6>
                                         <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                                     </a>
                                 </div>
-                                <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
+                                <div id="collapseBali" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingBali" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                                     <div class="panel-body">
-                                        <h5 class="mbr-fonts-style panel-text display-7">Discover Bali</h5>
-                                        <p class="mbr-fonts-style panel-text display-7">
-                                            Bali, the "Island of the Gods," is a paradise known for its stunning beaches, lush green rice terraces, vibrant culture, and ancient temples. It’s a favorite destination for travelers seeking relaxation, adventure, and cultural experiences. Don't miss attractions like Tanah Lot Temple, the serene Ubud Monkey Forest, and the breathtaking Mount Batur sunrise trek.
-                                        </p>
-                                        <p class="mbr-fonts-style panel-text display-7">
-                                            Explore its unique traditions, colorful festivals, and world-class cuisine. Whether you're surfing in Kuta, relaxing in Seminyak, or exploring the cultural heart of Ubud, Bali offers something for everyone.
-                                        </p>
-                                        <h6 class="mbr-fonts-style mt-4 mb-2 display-6">Photo Gallery</h6>
+                                        <div class="bali-destinations">
+                                            <!-- Destination 1 -->
+                                            <div class="destination">
+                                                <img src="images/tanah lot.webp" alt="Tanah Lot Temple" class="destination-image">
+                                                <h5 class="destination-title">Tanah Lot Temple</h5>
+                                                <p class="destination-text">A stunning seaside temple offering breathtaking views, especially during sunset. A sacred and iconic cultural landmark in Bali.</p>
+                                            </div>
+                                            <!-- Destination 2 -->
+                                            <div class="destination">
+                                                <img src="images/ubud rice.jpg" alt="Ubud Rice Terraces" class="destination-image">
+                                                <h5 class="destination-title">Ubud Rice Terraces</h5>
+                                                <p class="destination-text">Famous for its lush green rice paddies, this area provides a serene escape and a chance to experience Bali's traditional farming culture.</p>
+                                            </div>
+                                            <!-- Destination 3 -->
+                                            <div class="destination">
+                                                <img src="images/uluwatu.jpg" alt="Uluwatu Temple" class="destination-image">
+                                                <h5 class="destination-title">Uluwatu Temple</h5>
+                                                <p class="destination-text">Perched on a cliff overlooking the Indian Ocean, this temple is a spiritual sanctuary and a site for the iconic Kecak Fire Dance performance.</p>
+                                            </div>
+                                            <!-- Destination 4 -->
+                                            <div class="destination">
+                                                <img src="images/mount batur.jpg" alt="Mount Batur" class="destination-image">
+                                                <h5 class="destination-title">Mount Batur</h5>
+                                                <p class="destination-text">A popular destination for sunrise treks, Mount Batur offers panoramic views of Bali's landscapes and a sense of adventure.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>                            
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Raja Ampat</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
+                                <div class="panel-body">
+                                    <div class="raja-ampat-destinations">
+                                        <!-- Destination 1 -->
+                                        <div class="destination">
+                                            <img src="images/piaynemo.webp" alt="Piaynemo" class="destination-image">
+                                            <h5 class="destination-title">Piaynemo</h5>
+                                            <p class="destination-text">Famous for its breathtaking karst island formations and turquoise waters, Piaynemo is a must-visit viewpoint for every traveler.</p>
+                                        </div>
+                                        <!-- Destination 2 -->
+                                        <div class="destination">
+                                            <img src="images/wayag.jpg" alt="Wayag Islands" class="destination-image">
+                                            <h5 class="destination-title">Wayag Islands</h5>
+                                            <p class="destination-text">Explore the iconic lagoon and experience unparalleled views of Raja Ampat’s pristine beauty.</p>
+                                        </div>
+                                        <!-- Destination 3 -->
+                                        <div class="destination">
+                                            <img src="images/manta.jpg" alt="Manta Sandy" class="destination-image">
+                                            <h5 class="destination-title">Manta Sandy</h5>
+                                            <p class="destination-text">A world-class diving spot where you can swim with majestic manta rays in crystal-clear waters.</p>
+                                        </div>
+                                        <!-- Destination 4 -->
+                                        <div class="destination">
+                                            <img src="images/cape.webp" alt="Cape Kri" class="destination-image">
+                                            <h5 class="destination-title">Cape Kri</h5>
+                                            <p class="destination-text">Home to the richest marine biodiversity, Cape Kri is a diver’s paradise.</p>
+                                        </div>
+                                    </div>
+                                    </div>
                             </div>
                         </div>                        
-                        </div>                        
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Raja Ampat</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 2.</p>
-                                    </div>
-                                </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Borobudur</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
                             </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_17" aria-expanded="false" aria-controls="collapse3">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Borobudur</h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse3_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">Answer 3.</p>
+                            <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
+                                <div class="panel-body">
+                                    <div class="borobudur-destinations">
+                                        <!-- Destination 1 -->
+                                        <div class="destination">
+                                            <img src="images/borobodur2.jpg" alt="Borobudur Temple" class="destination-image">
+                                            <h5 class="destination-title">Borobudur Temple</h5>
+                                            <p class="destination-text">A UNESCO World Heritage site and the largest Buddhist temple in the world, known for its intricate carvings and breathtaking sunrise views.</p>
+                                        </div>
+                                        <!-- Destination 2 -->
+                                        <div class="destination">
+                                            <img src="images/pawon.avif" alt="Pawon Temple" class="destination-image">
+                                            <h5 class="destination-title">Pawon Temple</h5>
+                                            <p class="destination-text">A small yet beautiful temple near Borobudur, showcasing ancient architecture and cultural heritage.</p>
+                                        </div>
+                                        <!-- Destination 3 -->
+                                        <div class="destination">
+                                            <img src="images/mendut.jpg" alt="Mendut Temple" class="destination-image">
+                                            <h5 class="destination-title">Mendut Temple</h5>
+                                            <p class="destination-text">An iconic Buddhist temple featuring a giant Buddha statue, located a short distance from Borobudur.</p>
+                                        </div>
+                                        <!-- Destination 4 -->
+                                        <div class="destination">
+                                            <img src="images/puntuk.webp" alt="Punthuk Setumbu Hill" class="destination-image">
+                                            <h5 class="destination-title">Punthuk Setumbu Hill</h5>
+                                            <p class="destination-text">A popular viewpoint to witness the magical sunrise over Borobudur and Mount Merapi.</p>
+                                        </div>
+                                    </div>                                   
                                     </div>
-                                </div>
+                                    </div>
+                            </div>
+                        </div>                      
                             </div>                            
                         </div>
                     </div>
@@ -167,20 +801,6 @@
         </div>
     </section>
 
- <!-- Image Gallery Section -->
-<section class="gallery-section">
-    <h2>Gallery View of Bali</h2>
-    <div class="gallery-grid">
-        <img src="images/tanahlot.webp" alt="Tanah Lot Temple" class="gallery-item">
-        <img src="images/ubud.webp" alt="Ubud Rice Terraces" class="gallery-item">
-        <img src="images/beach.webp" alt="Bali Beach" class="gallery-item">
-        <img src="images/dance.webp" alt="Balinese Dance" class="gallery-item">
-        <img src="images/mountbatur.webp" alt="Mount Batur" class="gallery-item">
-        <img src="images/ceremony.webp" alt="Traditional Ceremony" class="gallery-item">
-        <img src="images/pura.webp" alt="Pura Temple" class="gallery-item">
-        <img src="images/pantai.webp" alt="Pantai Beach" class="gallery-item">
-    </div>
-</section>
 
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
