@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="https://r.mobirisesite.com/905761/assets/images/photo-1497942304796-b8bc2cc898f3.jpeg" type="image/x-icon" />
     <meta name="description" content="Explore the fascinating history of heroes, their legendary tales, and the impact they have had on society throughout the ages." />
 
-    <title>Maria DB</title>
+    <title>Maria Walanda Maramis</title>
 
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1731811735194" />
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/bootstrap/css/bootstrap.min.css?rnd=1731811735194" />
@@ -21,55 +21,150 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" /></noscript>
     <link rel="stylesheet" href="https://r.mobirisesite.com/905761/assets/css/mbr-additional.css?rnd=1731811735194" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .goog-logo-link {
+        display: none !important;
+      }
+      .goog-te-gadget {
+        font-size: 0 !important;
+      }
+      .goog-te-gadget span {
+        display: none !important;
+      }
+    </style>
+
+    <style>
+      .grid-item img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+      }
+    </style>
+
+    <style>
+      .language-switcher {
+        text-align: right;
+        margin: 10px;
+        padding: 10px;
+      }
+      .goog-te-banner-frame {
+        display: block !important;
+        position: fixed !important;
+        top: 0;
+        z-index: 9999;
+      }
+    </style>
   </head>
   <body>
     <!-- Header Menu -->
     <iframe src="header_heroes_page.html"></iframe>
 
-    <!-- Video and Hero's Name -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO6OSxL mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=fj-BcPK90f0" id="video-and-name">
-      <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0)"></div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="content-wrap col-12 col-md-12">
-            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-              <strong>Ki Hajar Dewantara</strong>
-            </h1>
-            <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">The Indonesian Hero of Education</p>
-            <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#running-text">Explore Now</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
 
-    <!-- Running Text -->
-    <section data-bs-version="5.1" class="gallery10 cid-uuiqO6YB8v" id="running-text">
-      <div class="container-fluid">
-        <div class="loop-container">
-          <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">
-            ☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes
-          </div>
-          <div class="item display-1" data-linewords="Epic Battles * Legendary Figures * Timeless Stories * Courageous Deeds * Inspiring Legacies * Unforgettable Moments *" data-direction="-1" data-speed="0.05">
-            ☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Google Translate Script -->
+    <script>
+      // Inisialisasi Google Translate
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,id,zh-TW', autoDisplay: false }, 'google_translate_element');
+      }
+
+      // Memuat script Google Translate secara dinamis
+      function loadGoogleTranslateScript() {
+        const script = document.createElement('script');
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(script);
+      }
+
+      // Mengubah Bahasa
+      function translatePage() {
+        const lang = document.getElementById('language-select').value;
+        if (lang === 'en') {
+          // Reload halaman untuk mengatur ulang Google Translate
+          location.reload();
+        } else {
+          if (!window.google || !window.google.translate) {
+            loadGoogleTranslateScript();
+          } else {
+            triggerLanguageChange(lang);
+          }
+        }
+      }
+
+      // Memicu perubahan bahasa melalui Google Translate
+      function triggerLanguageChange(lang) {
+        const iframe = document.querySelector('.goog-te-banner-frame');
+        if (iframe) {
+          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const selectElement = innerDoc.querySelector('select');
+          if (selectElement) {
+            selectElement.value = lang;
+            selectElement.dispatchEvent(new Event('change'));
+          }
+        } else {
+          setTimeout(() => triggerLanguageChange(lang), 500);
+        }
+      }
+
+      // Muat script Google Translate saat halaman dimuat
+      loadGoogleTranslateScript();
+    </script>
+
+   <!-- Opening Image -->
+
+<!-- Opening Image with Local Background -->
+<section id="opening-image" class="header18 cid-uuiqO6OSxL mbr-fullscreen">
+  <img 
+    src="images/maramis.png" 
+    alt="Hari Kartini Banner" 
+    class="responsive-image" 
+  />
+</section>
+
+
+
+<style>
+  /* Responsiveness for the opening image section */
+ /* Section container */
+#opening-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent content overflow */
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive image */
+.responsive-image {
+  width: 100%; /* Make the image take the full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100vh; /* Ensure it doesn’t exceed the viewport height */
+  object-fit: cover; /* Ensure it scales properly without distortion */
+  object-position: center; /* Center the focus of the image */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .responsive-image {
+    object-fit: contain; /* Ensure the entire image is visible */
+    max-height: none; /* Allow the image to expand vertically if necessary */
+  }
+}
+
+</style>
 
     <!-- Hero's Image and Basic Profile -->
     <section data-bs-version="5.1" class="header12 cid-uuiqO76SyA" id="basic-profile">
       <div class="text-center container">
+
         <div class="row mb-4 justify-content-center">
-          <div class="col-12 col-md-4">
-            <img src="https://r.mobirisesite.com/905761/assets/images/photo-1469388062863-8702b8cbe-h_m3k66fsh.jpg" alt="" />
-          </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-12 content-head">
-            <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
-              <strong>Ki Hajar Dewantara</strong>
-            </h1>
-            <p class="mbr-text mbr-fonts-style mb-4 display-7">Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani</p>
+            <p class="mbr-text mbr-fonts-style mb-4 display-7">"Maintain your nation, use your regional language, and wear your traditional attire."</p>
             <div class="mbr-section-btn mt-4">
               <a class="btn btn-primary display-7" href="#about-the-hero">Get Started</a>
             </div>
@@ -88,7 +183,7 @@
                 <div class="col-12 content-head">
                   <div class="mbr-section-head">
                     <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                      <strong>About Ki Hajar Dewantara</strong>
+                      <strong>About Maria Walanda Maramis</strong>
                     </h4>
                   </div>
                 </div>
@@ -97,65 +192,75 @@
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false" aria-controls="collapse1">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 1?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5"> Childhood and Family Background</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 1.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Maria Walanda Maramis was born on December 1, 1872, in Kema, North Sulawesi, into a family of farmers. After the early death of her parents, she was raised by her uncle, who encouraged her education. Despite living in a time when women’s roles were limited to domestic responsibilities, Maria displayed an early interest in learning and improving the lives of those around her.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_17" aria-expanded="false" aria-controls="collapse2">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 2?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5"> Advocacy for Women’s Rights</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 2.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Maria Walanda Maramis is best known for her efforts to advocate for women’s rights in Minahasa society. She believed that women should be equipped with knowledge and skills to contribute to their families and communities. Through her writings in local newspapers, Maria urged society to recognize women’s potential beyond the domestic sphere.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_17" aria-expanded="false" aria-controls="collapse3">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 3?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Founding PIKAT (Pendidikan Kaum Ibu)</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse3_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 3.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        In 1917, Maria established PIKAT (Percintaan Ibu Kepada Anak Temurunnya), an organization dedicated to educating women on household management, childcare, and basic education. PIKAT became a platform for empowering women in North Sulawesi and laid the groundwork for modern women’s education in the region.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_17" aria-expanded="false" aria-controls="collapse4">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 4?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Legacy and Recognition</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse4_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 4.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Maria Walanda Maramis passed away on April 22, 1924, but her contributions to women’s rights in Indonesia are widely celebrated. Her tireless work earned her the title of a National Hero of Indonesia. Today, her legacy inspires women across the country to strive for equality, education, and empowerment.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne">
                     <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_17" aria-expanded="false" aria-controls="collapse5">
-                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">About Hero 5?</h6>
+                      <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Vision of Empowerment</h6>
                       <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                     </a>
                   </div>
                   <div id="collapse5_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_17">
                     <div class="panel-body">
-                      <p class="mbr-fonts-style panel-text display-7">Answer 5.</p>
+                      <p class="mbr-fonts-style panel-text display-7">
+                        Maria’s vision extended beyond individual education; she hoped to create a society where women could actively participate in decision-making processes. Her forward-thinking approach serves as a reminder of the importance of advocating for equality and challenging societal norms.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -169,177 +274,277 @@
     <!-- Gallery -->
     <section data-bs-version="5.1" class="gallery4 cid-uuiqO7qVLF" id="gallery">
       <div class="container-fluid gallery-wrapper">
+        <h4 class="gallery-title mbr-fonts-style align-center mb-4 display-2"><strong>Photos of Her</strong></h4>
         <div class="row justify-content-center">
           <div class="col-12 content-head"></div>
         </div>
         <div class="grid-container">
           <div class="grid-container-1" style="transform: translate3d(-200px, 0px, 0px)">
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1463595663992-cb0dc1d64-h_m3k6qx64.jpg" alt="" />
+                <img src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg" alt="" />
+              </div>
+            <div class="grid-item">
+              <img src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1574687357639-60df588aa-h_m3k6m9ux.jpg" alt="" />
+              <img src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1479888230021-c24f136d8-h_m3k6n0c9.jpg" alt="" />
-            </div>
-            <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1530819568329-97653eafb-h_m3k6pppz.jpg" alt="" />
+              <img src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg" alt="" />
             </div>
           </div>
           <div class="grid-container-2" style="transform: translate3d(-70px, 0px, 0px)">
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1484887603430-371459454eed.jpeg" alt="" />
+              <img
+                src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg"
+                alt=""
+              />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488693161025-5f967b74de89.jpeg" alt="" />
+              <img src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1496293455970-f8581aae0e3b.jpeg" alt="" />
+              <img src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg" alt="" />
             </div>
             <div class="grid-item">
-              <img src="https://r.mobirisesite.com/905761/assets/images/photo-1532387482281-c56ef57652ec.jpeg" alt="" />
+              <img src="https://cdn0-production-images-kly.akamaized.net/20nwOcTMNPpGDyT-fHW0SuJD4Yo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2882408/original/050895900_1565839264-unnamed.jpg" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Hero's Story -->
-    <section data-bs-version="5.1" class="article9 cid-uuiqO7HdB8" id="story">
+    <!-- Value of His Life Section -->
+    <section class="heroic-cards" style="background-color: #f8f9fa; padding: 50px 0">
+      <div class="container" style="max-width: 1200px; margin: auto">
+        <!-- Section Title -->
+        <h2 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: #333; margin-bottom: 30px">Value of Her Life</h2>
+
+        <div class="row card-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+          <!-- Card 1 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://www.missiontolearn.com/wp-content/uploads/2011/06/books-reading-retention.jpg" Hero Image style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333"> Advocacy for Women’s Empowerment
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Maria believed in the transformative power of educating women and giving them the tools to improve their lives and communities. Her advocacy highlighted the importance of gender equality in social progress.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="data:image/jpeg;base64,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" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333"> Commitment to Community Service</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Through her organization PIKAT, Maria emphasized the value of community service and collective growth. She inspired women to work together for the betterment of society.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://c8.alamy.com/comp/2JAKNHJ/group-of-business-people-from-two-companies-are-sitting-at-the-conference-table-in-a-negotiation-2JAKNHJ.jpg" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333"> Courage to Challenge the Status Quo</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Maria’s efforts to promote women’s rights in a traditional society required immense courage. She demonstrated the power of persistence in fighting for social change.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease">
+            <img src="https://snydermediations.com/wp-content/uploads/2024/05/scale-of-justice-balanced.jpg" alt="Hero Image" style="width: 100%; height: 150px; object-fit: cover" />
+            <div class="card-content" style="padding: 15px">
+              <h3 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #333">Vision of Holistic Education</h3>
+              <p class="card-description" style="font-size: 0.9rem; color: #666; line-height: 1.6">
+                Maria’s approach to women’s education was holistic, focusing on practical skills, moral values, and knowledge. Her work serves as a reminder that education is a powerful tool for empowerment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <!-- Get Inspired by The Hero -->
+    <!-- Interactive Quiz Section -->
+    <section data-bs-version="5.1" class="quiz-section cid-uuiqO8Quiz" id="interactive-quiz">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="card col-md-12 col-lg-10">
-            <div class="card-wrapper">
-              <div class="card-content-text">
-                <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
-                  <strong>Unveiling Heroic Legends</strong>
-                </h3>
-                <div class="row card-box align-left">
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item features-without-image col-12">
-                    <div class="item-wrapper">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's story. Hero's
-                        story. Hero's story. Hero's story. Hero's story. Hero's story.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="image-wrapper d-flex justify-content-center mt-3">
-                <img src="https://r.mobirisesite.com/905761/assets/images/photo-1488841714725-bb4c32d1a-h_m3k6rpu2.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Parallax -->
-    <section data-bs-version="5.1" class="header18 cid-uuiqO8agKr mbr-fullscreen mbr-parallax-background" id="parallax-1">
-      <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0)"></div>
-      <div class="container-fluid">
-        <div class="row"></div>
-      </div>
-    </section>
-
-    <!-- Parallax -->
-    <section data-bs-version="5.1" class="image02 cid-uuiqO8lxNq mbr-fullscreen mbr-parallax-background" id="parallax-2">
-      <div class="container">
-        <div class="row"></div>
-      </div>
-    </section>
-
-    <!-- Get Inspired by The Hero -->
-    <section data-bs-version="5.1" class="people05 cid-uuiqO7TL68" id="get-inspired">
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-12 mb-0 content-head">
+          <div class="col-12 mb-4 content-head text-center">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>Get Inspired by Ki Hajar Dewantara</strong>
+              <strong>How Much Do You Know About Maria Walanda Maramis?</strong>
             </h3>
+            <p class="mbr-fonts-style display-7 mt-3">Take this quiz and discover fun facts about her life and achievements!</p>
           </div>
         </div>
-        <div class="row">
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 active">
-            <div class="item-wrapper">
-              <div class="card-box align-left">
-                <p class="card-text mbr-fonts-style display-7">Inspiration 1.</p>
-                <div class="img-wrapper mt-4 mb-3">
-                  <img src="https://r.mobirisesite.com/905761/assets/images/photo-1679746584014-fb31d4eb0a5e.jpeg" alt="" data-slide-to="0" data-bs-slide-to="0" />
-                </div>
-              </div>
-            </div>
+        <div class="quiz-container">
+          <!-- Question 1 -->
+          <div class="quiz-item">
+            <h4 class="quiz-question mbr-fonts-style display-5">
+              <strong>1. When was Maria Walanda Maramis born?</strong>
+            </h4>
+            <ul class="quiz-options">
+              <li><input type="radio" name="q1" id="q1a" value="A" /> <label for="q1a"> April 21, 1879</label></li>
+              <li><input type="radio" name="q1" id="q1b" value="B" /> <label for="q1b"> December 1, 1872</label></li>
+              <li><input type="radio" name="q1" id="q1c" value="C" /> <label for="q1c"> November 10, 1890
+            </label></li>
+            </ul>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="card-box align-left">
-                <p class="card-text mbr-fonts-style display-7">Inspiration 2.</p>
-                <div class="img-wrapper mt-4 mb-3">
-                  <img src="https://r.mobirisesite.com/905761/assets/images/photo-1589571894960-20bbe2828d0a.jpeg" data-slide-to="1" data-bs-slide-to="1" alt="" />
-                </div>
-              </div>
-            </div>
+          <!-- Question 2 -->
+          <div class="quiz-item">
+            <h4 class="quiz-question mbr-fonts-style display-5">
+              <strong>2. What organization did Maria Walanda Maramis establish?</strong>
+            </h4>
+            <ul class="quiz-options">
+              <li><input type="radio" name="q2" id="q2a" value="A" /> <label for="q2a">PIKAT</label></li>
+              <li><input type="radio" name="q2" id="q2b" value="B" /> <label for="q2b">Habis Gelap Terbitlah Terang</label></li>
+              <li><input type="radio" name="q2" id="q2c" value="C" /> <label for="q2c">Pahlawan Perempuan</label></li>
+            </ul>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="card-box align-left">
-                <p class="card-text mbr-fonts-style display-7">Inspiration 3.</p>
-                <div class="img-wrapper mt-4 mb-3">
-                  <img src="https://r.mobirisesite.com/905761/assets/images/photo-1626899798511-c3eaacb02846.jpeg" data-slide-to="2" data-bs-slide-to="2" alt="" />
-                </div>
-              </div>
-            </div>
+          <!-- Question 3 -->
+          <div class="quiz-item">
+            <h4 class="quiz-question mbr-fonts-style display-5">
+              <strong>3. What was Maria Walanda Maramis’ main goal?</strong>
+            </h4>
+            <ul class="quiz-options">
+              <li><input type="radio" name="q3" id="q3a" value="A" /> <label for="q3a"> Promoting women’s education and empowerment</label></li>
+              <li><input type="radio" name="q3" id="q3b" value="B" /> <label for="q3b"> Improving economic conditions</label></li>
+              <li><input type="radio" name="q3" id="q3c" value="C" /> <label for="q3c"> Supporting cultural preservation</label></li>
+            </ul>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="card-box align-left">
-                <p class="card-text mbr-fonts-style display-7">Inspiration 4.</p>
-                <div class="img-wrapper mt-4 mb-3">
-                  <img src="https://r.mobirisesite.com/905761/assets/images/photo-1545803928-04e3f4cdd4ed.jpeg" data-slide-to="4" data-bs-slide-to="4" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="card-box align-left">
-                <p class="card-text mbr-fonts-style display-7">Inspiration 5.</p>
-                <div class="img-wrapper mt-4 mb-3">
-                  <img src="https://r.mobirisesite.com/905761/assets/images/photo-1497485692312-a26e1cc30f1d.jpeg" data-slide-to="6" data-bs-slide-to="6" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="card-box align-left">
-                <p class="card-text mbr-fonts-style display-7">Inspiration 6.</p>
-                <div class="img-wrapper mt-4 mb-3">
-                  <img src="https://r.mobirisesite.com/905761/assets/images/photo-1692558588242-57cec1e32bba.jpeg" data-slide-to="7" data-bs-slide-to="7" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <button class="btn btn-primary mt-4" onclick="checkAnswers()">Submit Answers</button>
         </div>
       </div>
     </section>
+
+    <!-- Pop-Up Modal -->
+    <div id="quizModal" class="quiz-modal">
+      <div class="quiz-modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title">Your Quiz Score!</h2>
+        <p class="modal-score" id="modal-score"></p>
+        <div class="confetti"></div>
+      </div>
+    </div>
+
+    <!-- CSS for Quiz and Modal -->
+    <style>
+      .quiz-section {
+        background-color: #f4f4f9;
+        padding: 50px 20px;
+        border-radius: 10px;
+      }
+      .quiz-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .quiz-item {
+        margin-bottom: 30px;
+      }
+      .quiz-question {
+        margin-bottom: 10px;
+        color: #ad2917;
+      }
+      .quiz-options li {
+        list-style: none;
+        margin: 5px 0;
+      }
+
+      /* Modal Styling */
+      .quiz-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        animation: fadeIn 0.5s;
+      }
+      .quiz-modal-content {
+        position: relative;
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+        animation: popIn 0.5s;
+      }
+      .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+      }
+      .modal-title {
+        font-size: 28px;
+        color: #563d82;
+      }
+      .modal-score {
+        font-size: 22px;
+        margin-top: 20px;
+        color: #333;
+      }
+
+      /* Animation */
+      @keyframes popIn {
+        from {
+          transform: scale(0.8);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <!-- JavaScript for Quiz Logic and Modal -->
+    <script>
+      function checkAnswers() {
+        const correctAnswers = {
+          q1: 'B',
+          q2: 'A',
+          q3: 'A',
+        };
+        let score = 0;
+        for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+          const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+          if (userAnswer && userAnswer.value === correctAnswer) {
+            score++;
+          }
+        }
+        displayModal(score, Object.keys(correctAnswers).length);
+      }
+
+      function displayModal(score, total) {
+        const modal = document.getElementById('quizModal');
+        const scoreText = document.getElementById('modal-score');
+        scoreText.innerHTML = `You scored <strong>${score} out of ${total}</strong>!<br>${score === total ? "🎉 Incredible! You're a genius! 🎉" : 'Keep learning to achieve perfection!'}`;
+        modal.style.display = 'block';
+      }
+
+      function closeModal() {
+        const modal = document.getElementById('quizModal');
+        modal.style.display = 'none';
+      }
+    </script>
 
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
